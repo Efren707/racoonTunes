@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 
 class SessionForm extends React.Component {
 
@@ -6,15 +7,26 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            email: "",
+            name: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     update(field) {
         return e => {
             this.setState({ [field]: e.target.value })
         }
+    }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        this.props.processForm({
+            username: "demoUser",
+            password: "123456"
+        })
     }
 
     handleSubmit(e) {
@@ -36,6 +48,20 @@ class SessionForm extends React.Component {
     }
 
     render() {
+
+        let email;
+        let name;
+        let demo;
+
+        if(this.props.formType === 'Sign up'){
+            email = <div><label>Email:<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
+            name = <div><label>Name:<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
+        }
+
+        if(this.props.formType === 'login'){
+            demo = <div><button onClick={this.handleDemoSubmit}>Login as guest</button><br /></div>
+        }
+
         return (
 
             <form onSubmit={this.handleSubmit}>
@@ -54,7 +80,13 @@ class SessionForm extends React.Component {
                 </label>
                 <br />
 
+                {email}
+                
+                {name}
+                
                 <input type="submit" value={this.props.formType} />
+
+                {demo}
             </form>
 
         );
