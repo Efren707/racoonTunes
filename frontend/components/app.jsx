@@ -8,17 +8,20 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
+
     <div>
-        <header>
+        <header>      
             <Link to='/'>
-                <h1>Welcome to RacoonTunes!</h1>
-            </Link>
+                <img height="100px" src={window.logo} />
+            </Link> 
+            <h1>Welcome to RacoonTunes!</h1>
             <GreetingContainer />
         </header>
 
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
+            <Redirect to="/" />
         </Switch>
         
     </div>
