@@ -1,0 +1,72 @@
+$splash-width: 60vw;
+
+
+.app {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.splash-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    font-family: inter;
+    width: $splash-width;
+    height: 3vw;
+    position: fixed;
+}
+
+.splash-header h1 {
+    font-size: 30px;
+}
+
+.splash-logo-title {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.greeting-buttons {
+    border-radius: 12px;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.greeting-login {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 15px;
+  padding: 7px 14px;
+  border-radius: 10px;
+}
+
+.greeting-signup {
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-size: 15px;
+  padding: 7px 20px;
+  border-radius: 10px;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-page{
+    width: $splash-width;
+    height: $splash-width * 0.5;
+}
+
+.main-picture{
+    width: $splash-width;
+    height: $splash-width * 0.5;
+}

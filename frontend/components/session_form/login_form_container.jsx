@@ -1,22 +1,28 @@
-import React from "react";
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { login, removeErrors } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
-const mSTP = ({ errors }) => {
+const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'login',
-        navLink: <Link to='/signup'>Make an account</Link>
-    }
-}
+    };
+};
 
-const mDTP = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
+        otherForm: (
+            <button onClick={() => dispatch(openModal('signup'))}>
+                Sign up
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal()),
+        login: user => dispatch(login(user)),
         removeErrors: () => dispatch(removeErrors())
     };
-}
+};
 
-export default connect(mSTP, mDTP)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

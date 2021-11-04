@@ -3,13 +3,15 @@
   <head>
     <title>RacoonTunes</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <script>
-      window.logo = '<%= image_url('logo.jpg') %>'
+      window.logo = '<%= image_url('logocropped.png') %>'
+      window.homeMainPic = '<%= image_url('splash-main-picture.jpg') %>'
     </script>
   </head>
 

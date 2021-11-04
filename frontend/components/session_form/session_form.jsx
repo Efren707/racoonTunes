@@ -1,42 +1,43 @@
-import React from "react";
-import { Redirect } from "react-router";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             username: "",
             password: "",
             email: "",
-            name: ""
+            name: "",
+            errors: {}
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.props.removeErrors();
     }
 
     update(field) {
-        return e => {
-            this.setState({ [field]: e.target.value })
-        }
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
     }
 
     handleDemoSubmit(e) {
         e.preventDefault();
-        this.props.processForm({
+        this.props.login({
             username: "demoUser",
             password: "123456"
-        })
+        }).then(this.props.closeModal);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal)
+        .then(song => this.props.history.push(`/api/songs/${song.song.id}`));
     }
 
     renderErrors() {
@@ -57,7 +58,7 @@ class SessionForm extends React.Component {
         let name;
         let demo;
 
-        if(this.props.formType === 'Sign up'){
+        if(this.props.formType === 'signup'){
             email = <div><label>Email:<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
             name = <div><label>Name:<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
         }
@@ -67,35 +68,44 @@ class SessionForm extends React.Component {
         }
 
         return (
+            <div className="login-form-container">
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <br />
+                    Please {this.props.formType} or {this.props.otherForm}
+                    
+                    {this.renderErrors()}
+                    <div className="login-form">
+                        <br />
 
-            <form onSubmit={this.handleSubmit}>
-            
-                Please {this.props.formType} or {this.props.navLink}
-                {this.renderErrors()}
-                <br />
+                        {name}
+                        {email}
 
-                <label>Username:
-                    <input type="text" value={this.state.username} onChange={this.update('username')} />
-                </label>
-                <br />
+                        <label>Username:
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.update('username')}
+                                className="login-input"
+                            />
+                        </label>
+                        <br />
+                        <label>Password:
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                className="login-input"
+                            />
+                        </label>
+                        <br />
 
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.update('password')} />
-                </label>
-                <br />
+                        <input className="session-submit" type="submit" value={this.props.formType} />
 
-                {email}
-                
-                {name}
-                
-                <input type="submit" value={this.props.formType} />
-
-                {demo}
-            </form>
-
+                        {demo}
+                        
+                    </div>
+                </form>
+            </div>
         );
     }
-
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
