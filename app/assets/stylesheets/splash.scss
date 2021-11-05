@@ -1,5 +1,5 @@
 $splash-width: 60vw;
-
+$orange-button: orangered;
 
 .app {
     background-color: lightgray;
@@ -47,8 +47,8 @@ $splash-width: 60vw;
 }
 
 .greeting-signup {
-  background-color: orangered;
-  border: 1px solid orangered;
+  background-color: $orange-button;
+  border: 1px solid $orange-button;
   color: white;
   font-size: 15px;
   padding: 7px 20px;
@@ -56,17 +56,56 @@ $splash-width: 60vw;
 }
 
 .login-form-container {
+    width: $splash-width * 0.3;
+    height: $splash-width * 0.6;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+}
+
+.login-form-container label {
+    display: block;
+}
+
+.login-form-container span {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
 }
 
 .home-page{
     width: $splash-width;
-    height: $splash-width * 0.5;
+    height: 400vh;
 }
 
 .main-picture{
     width: $splash-width;
     height: $splash-width * 0.5;
+}
+
+.demo-button {
+    background-color: $orange-button;
+    color: white;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: $splash-width*0.01 $splash-width*0.13;
+    border-radius: 10px;
+}
+
+.session-submit {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: $splash-width*0.01 $splash-width*0.13;
+    border-radius: 10px;
+}
+
+.other-form-buttom{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 3px 6px;
+    border-radius: 10px;
 }

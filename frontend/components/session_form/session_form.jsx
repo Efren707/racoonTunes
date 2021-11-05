@@ -59,12 +59,12 @@ class SessionForm extends React.Component {
         let demo;
 
         if(this.props.formType === 'signup'){
-            email = <div><label>Email:<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
-            name = <div><label>Name:<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
+            email = <div><label><span>Email:</span>&nbsp;<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
+            name = <div><label><span>Name:</span>&nbsp;<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
         }
 
         if(this.props.formType === 'login'){
-            demo = <div><button onClick={this.handleDemoSubmit}>Login as guest</button><br /></div>
+            demo = <div><button className="demo-button" onClick={this.handleDemoSubmit}>demo</button></div>
         }
 
         return (
@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
                         {name}
                         {email}
 
-                        <label>Username:
+                        <label><span>Username:</span>&nbsp;
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
@@ -88,7 +88,8 @@ class SessionForm extends React.Component {
                             />
                         </label>
                         <br />
-                        <label>Password:
+                        <br />
+                        <label><span>Password:</span>&nbsp;
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
@@ -96,9 +97,11 @@ class SessionForm extends React.Component {
                             />
                         </label>
                         <br />
+                        <br />
 
                         <input className="session-submit" type="submit" value={this.props.formType} />
-
+                        <br/>
+                        <br/>
                         {demo}
                         
                     </div>

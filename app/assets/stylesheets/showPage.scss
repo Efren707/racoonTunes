@@ -1,0 +1,33 @@
+
+.show-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    background-color: white;
+}
+
+.song-info {
+    position: fixed;
+    top: 3vw;
+    width: 58vw;
+    height: 100vh;
+    
+}
+
+.song-info h1 {
+    font-size: 50px;
+}
+
+.song-info h3 {
+    font-size: 15px;
+}
+
+.song-info p {
+    font-size: 20px;
+}
+
+.song-photo {
+    height: 25vh;
+    width: 25vh;
+}

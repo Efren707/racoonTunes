@@ -9,6 +9,7 @@ import LoginFormContainer from './session_form/login_form_container.jsx';
 import SignupFormContainer from './session_form/signup_form_container.jsx';
 import UploadSongFormContainer from './songs/upload_form';
 import SongShowContainer from './songs/song_show';
+import DiscoverContainer from './discover/discover';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -23,10 +24,12 @@ const App = () => (
                 <h1>RacoonTunes</h1>
             </div>
             <GreetingContainer />
-            
         </header>
         <HomePageContainer />
+        
+        
         <Switch>
+            <ProtectedRoute exact path="/discover" component={DiscoverContainer}/>
             <AuthRoute exact path="/upload" component={UploadSongFormContainer}/>
             <ProtectedRoute exact path="/api/songs/:id" component={SongShowContainer}/>
         </Switch>

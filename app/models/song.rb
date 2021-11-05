@@ -13,7 +13,8 @@
 class Song < ApplicationRecord
     validates :song_name, :genre, :author_id, presence: true
 
-    has_one_attached :song_file
+    has_one_attached :audio
+    has_one_attached :photo
 
     belongs_to :user,
         primary_key: :id,

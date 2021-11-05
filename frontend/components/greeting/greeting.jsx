@@ -18,10 +18,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <button className="header-button" onClick={logout}>Log Out</button>
         </hgroup>
     );
-    debugger
+    
     return (
         currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-        // currentUser ? personalGreeting(currentUser, logout) : <h1>testing</h1>
     );
 };
 

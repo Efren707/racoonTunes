@@ -22,11 +22,12 @@ export const receiveUserSongs = userId => {
 }
 
 export const createSong = song => {
-    debugger
     return $.ajax({
         url: `/api/songs`,
         method: 'POST',
-        data: {song}
+        data: song,
+        contentType: false,
+        processData: false
     })
 }
 
