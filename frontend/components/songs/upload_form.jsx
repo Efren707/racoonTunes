@@ -57,7 +57,7 @@ class UploadSongForm extends React.Component {
     }
 
     render() {
-
+        
         return (
             <div className="upload-page">
                 <div className="upload-form">
@@ -69,21 +69,53 @@ class UploadSongForm extends React.Component {
                         <h1>Create your own song</h1>
                         <br />
 
-                        <label><span>Name</span>
+                        <label><span>Title</span>&nbsp;
                             <input type="text" value={this.state.song_name} onChange={this.update('song_name')} />
                         </label>
 
                         <br />
                         <br />
 
-                        <label>Genre
-                            <input type="text" value={this.state.genre} onChange={this.update('genre')} />
+                        <label><span>Genre</span>&nbsp;
+                            <select onChange={this.update('genre')}>
+                                <option value="None">None</option>
+                                <option value={this.state.genre = "Alternative Rock"}>Alternative Rock</option>
+                                <option value={this.state.genre = "Ambient"}>Ambient</option>
+                                <option value={this.state.genre = "Classical"}>Classical</option>
+                                <option value={this.state.genre = "Country"}>Country</option>
+                                <option value={this.state.genre = "Dance & EDM"}>Dance & EDM</option>
+                                <option value={this.state.genre = "Dancehall"}>Dancehall</option>
+                                <option value={this.state.genre = "Deep House"}>Deep House</option>
+                                <option value={this.state.genre = "Disco"}>Disco</option>
+                                <option value={this.state.genre = "Drum and Bass"}>Drum and Bass</option>
+                                <option value={this.state.genre = "Dubstep"}>Dubstep</option>
+                                <option value={this.state.genre = "Electronic"}>Electronic</option>
+                                <option value={this.state.genre = "Folk & Singer-Songwriter"}>Folk & Singer-Songwriter</option>
+                                <option value={this.state.genre = "Hip-Hop & Rap"}>Hip-Hop & Rap</option>
+                                <option value={this.state.genre = "House"}>House</option>
+                                <option value={this.state.genre = "Indie"}>Indie</option>
+                                <option value={this.state.genre = "Jazz & Blues"}>Jazz & Blues</option>
+                                <option value={this.state.genre = "Latin"}>Latin</option>
+                                <option value={this.state.genre = "Metal"}>Metal</option>
+                                <option value={this.state.genre = "Piano"}>Piano</option>
+                                <option value={this.state.genre = "Pop"}>Pop</option>
+                                <option value={this.state.genre = "R&B & Soul"}>R&B & Soul</option>
+                                <option value={this.state.genre = "Reggae"}>Reggae</option>
+                                <option value={this.state.genre = "Reggaeton"}>Reggaeton</option>
+                                <option value={this.state.genre = "Rock"}>Rock</option>
+                                <option value={this.state.genre = "Soundtrack"}>Soundtrack</option>
+                                <option value={this.state.genre = "Techno"}>Techno</option>
+                                <option value={this.state.genre = "Trance"}>Trance</option>
+                                <option value={this.state.genre = "Trap"}>Trap</option>
+                                <option value={this.state.genre = "Triphop"}>Triphop</option>
+                                <option value={this.state.genre = "World"}>World</option>
+                            </select>
                         </label>
 
                         <br />
                         <br />
 
-                        <label>Description
+                        <label><span>Description</span>&nbsp;
                             <textarea value={this.state.description} onChange={this.update('description')} />
                         </label>
                         <br />

@@ -25,7 +25,7 @@ class SongShow extends React.Component {
                     
                     
                     
-                    <br/>
+                    
                     <img className="song-photo" src={song.photo} alt="song photo cover"/>
                     <h1>{song.song_name}</h1>
                     <h3>{song.genre}</h3>

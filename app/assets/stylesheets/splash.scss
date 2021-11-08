@@ -1,17 +1,15 @@
-$splash-width: 60vw;
+$splash-width: 80vw;
 $orange-button: orangered;
 
 .app {
-    background-color: lightgray;
+    background-color: lightgrey;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .splash-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    
     background-color: black;
     font-family: inter;
     width: $splash-width;
@@ -27,6 +25,13 @@ $orange-button: orangered;
     display: flex;
     align-items: center;
     color: white;
+}
+.login-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .greeting-buttons {
@@ -55,11 +60,14 @@ $orange-button: orangered;
   border-radius: 10px;
 }
 
+
+
 .login-form-container {
     width: $splash-width * 0.3;
     height: $splash-width * 0.6;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
@@ -80,7 +88,7 @@ $orange-button: orangered;
 
 .main-picture{
     width: $splash-width;
-    height: $splash-width * 0.5;
+    height: $splash-width * 0.37;
 }
 
 .demo-button {
@@ -108,4 +116,16 @@ $orange-button: orangered;
     font-size: 15px;
     padding: 3px 6px;
     border-radius: 10px;
+}
+
+.home-page-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.home-page h2 {
+    font-size: 24px;
+    font-weight: 100;
 }

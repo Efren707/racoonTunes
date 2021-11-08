@@ -9,10 +9,19 @@
 .upload-form {
     position: fixed;
     top: 3vw;
-    width: 60vw;
+    width: 80vw;
     height: 100vh;
     background-color: white;
     display: flex;
     justify-content: center;
 }
 
+.upload-form label {
+    display: block;
+}
+
+.upload-form span {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+}

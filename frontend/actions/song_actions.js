@@ -21,7 +21,7 @@ const removeSong = songId => ({
 
 export const receiveCurrentUserSongs = userId => dispatch => {
     return SongApiUtil.receiveUserSongs(userId)
-        .then(songs => dispatch(receiveSongs(songs)))
+    .then(songs => dispatch(receiveSongs(songs)))
 }
 
 export const receiveAllSongs = () => dispatch => {

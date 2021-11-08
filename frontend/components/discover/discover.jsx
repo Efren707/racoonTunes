@@ -6,33 +6,24 @@ class DiscoverPage extends React.Component {
 
     constructor(props) {
         super(props);
+        
     }
 
-    componentDidMount() {
+    componentDidMount(){
         this.props.receiveAllSongs();
     }
 
     render() {
+        const { songs } = this.props;
         
-        
-        
-        if(this.props.songs === []) return null;
-        const {songs} = this.props;
-        
-        
-        
+        debugger
         return(
             <div className="discover-page">
 
                 <div className="discover-main">
 
-                    <h1>Discover page</h1>
-
-                    <ul>
-                        {
-                            songs.map(song => (<SongIndexItem song={song} />))
-                        }
-                    </ul>
+                    <h1>DiscoverPage</h1>
+                    
                 </div>
                 
             </div>
@@ -40,8 +31,9 @@ class DiscoverPage extends React.Component {
     }
 }
 
-const mSTP = (state) => ({
-    songs: Object.values(state.entities.songs)
+const mSTP = (state, ownProps) => ({
+    songs: Object.values(state.entities.songs),
+    pathname: ownProps.location.pathname === '/discover'
 })
 
 const mDTP = dispatch => ({

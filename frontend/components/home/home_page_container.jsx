@@ -12,7 +12,11 @@ class HomePageContainer extends React.Component {
             return (
 
                 <div className="home-page">
-                    <img className="main-picture" src={window.homeMainPic}></img>
+                   <img className="main-picture" src={window.homeMainPic}></img>
+                    
+                   <div className="home-page-content">
+                        <h2>Hear what’s trending for free in the RacoonTunes community</h2>
+                   </div>
                 </div>
             )
         } else {

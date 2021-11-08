@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router'
 import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
@@ -34,10 +35,11 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
+
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal)
-        .then(song => this.props.history.push(`/api/songs/${song.song.id}`));
+        const user = Object.assign({}, this.state); 
+        this.props.processForm(user).then(this.props.closeModal);
+        <Redirect to="/discover"/>
     }
 
     renderErrors() {
@@ -66,12 +68,15 @@ class SessionForm extends React.Component {
         if(this.props.formType === 'login'){
             demo = <div><button className="demo-button" onClick={this.handleDemoSubmit}>demo</button></div>
         }
-
+        
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <br />
-                    Please {this.props.formType} or {this.props.otherForm}
+                    
+                    <h2>Please {this.props.formType} or {this.props.otherForm}</h2>
+                    
+                    
                     
                     {this.renderErrors()}
                     <div className="login-form">
@@ -106,9 +111,10 @@ class SessionForm extends React.Component {
                         
                     </div>
                 </form>
+                <Redirect to='/discover' />
             </div>
         );
     }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;
