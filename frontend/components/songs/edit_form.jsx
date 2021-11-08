@@ -1,9 +1,9 @@
 import React from "react";
-import {connect} from "react-redux";
-import {Router } from "react-router-dom";
+import { connect } from "react-redux";
+
 import { createNewSong } from '../../actions/song_actions';
 
-class UploadSongForm extends React.Component {
+class EditSongForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ class UploadSongForm extends React.Component {
         this.handleAudio = this.handleAudio.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const { createSong } = this.props;
         createSong
     }
@@ -31,17 +31,17 @@ class UploadSongForm extends React.Component {
         )
     }
 
-    handlePhoto(e){
-        this.setState({photoFile: e.currentTarget.files[0]})
+    handlePhoto(e) {
+        this.setState({ photoFile: e.currentTarget.files[0] })
     }
 
     handleAudio(e) {
         this.setState({ audioFile: e.currentTarget.files[0] })
     }
 
-    handleSongSubmit(e){
-        const {history} = this.props;
-        
+    handleSongSubmit(e) {
+        const { history } = this.props;
+
         e.preventDefault()
         const formData = new FormData();
         formData.append('song[song_name]', this.state.song_name);
@@ -50,14 +50,14 @@ class UploadSongForm extends React.Component {
         formData.append('song[author_id]', this.props.currentUser);
         formData.append('song[photo]', this.state.photoFile);
         formData.append('song[audio]', this.state.audioFile);
-        
+
         this.props.createSong(formData)
         .then(song => history.push(`/api/songs/${song.song.id}`))
-    
+
     }
 
     render() {
-        
+
         return (
             <div className="upload-page">
                 <div className="upload-form">
@@ -70,7 +70,7 @@ class UploadSongForm extends React.Component {
                             <h1>Create your own song </h1>
                             <p>* Required fields</p>
                         </div>
-                        
+
                         <br />
 
                         <label><span>Title *</span>&nbsp;
@@ -126,7 +126,7 @@ class UploadSongForm extends React.Component {
                         <br />
 
                         <label>Photo</label>
-                        <br/>
+                        <br />
                         <input type='file' onChange={this.handlePhoto} accept="image/png, image/jpeg" />
                         <br />
                         <br />
@@ -157,6 +157,6 @@ const mDTP = dispatch => ({
     createSong: song => dispatch(createNewSong(song))
 })
 
-const UploadSongFormContainer = connect(mSTP, mDTP)(UploadSongForm)
+const EditSongFormContainer = connect(mSTP, mDTP)(EditSongForm)
 
-export default UploadSongFormContainer
+export default EditSongFormContainer

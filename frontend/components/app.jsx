@@ -6,6 +6,7 @@ import Modal from './modal/modal';
 import GreetingContainer from './greeting/greeting_container';
 import HomePageContainer from './home/home_page_container';
 import UploadSongFormContainer from './songs/upload_form';
+import EditSongFormContainer from './songs/edit_form';
 import SongShowContainer from './songs/song_show';
 import DiscoverContainer from './discover/discover';
 
@@ -32,6 +33,7 @@ const App = () => (
             
             <ProtectedRoute exact path="/discover" component={DiscoverContainer}/>
             <AuthRoute exact path="/upload" component={UploadSongFormContainer}/>
+            <AuthRoute exact path="/api/songs/edit/:id" component={EditSongFormContainer}/>
             <ProtectedRoute exact path="/api/songs/:id" component={SongShowContainer}/>
         </Switch>
     </div>
