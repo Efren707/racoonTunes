@@ -17,6 +17,8 @@ class HomePageContainer extends React.Component {
                    <div className="home-page-content">
                         <h2>Hear what’s trending for free in the RacoonTunes community</h2>
                    </div>
+
+                    <img className="main-picture" src={window.homeIphonePic}></img>
                 </div>
             )
         } else {

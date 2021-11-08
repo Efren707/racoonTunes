@@ -81,38 +81,38 @@ class UploadSongForm extends React.Component {
                         <br />
 
                         <label><span>Genre *</span>&nbsp;
-                            <select onChange={this.update('genre')}>
+                            <select onChange={this.update('genre')} value={this.state.genre}>
                                 <option selected disabled value="None">None</option>
-                                <option value={this.state.genre = "Alternative Rock"}>Alternative Rock</option>
-                                <option value={this.state.genre = "Ambient"}>Ambient</option>
-                                <option value={this.state.genre = "Classical"}>Classical</option>
-                                <option value={this.state.genre = "Country"}>Country</option>
-                                <option value={this.state.genre = "Dance & EDM"}>Dance & EDM</option>
-                                <option value={this.state.genre = "Dancehall"}>Dancehall</option>
-                                <option value={this.state.genre = "Deep House"}>Deep House</option>
-                                <option value={this.state.genre = "Disco"}>Disco</option>
-                                <option value={this.state.genre = "Drum and Bass"}>Drum and Bass</option>
-                                <option value={this.state.genre = "Dubstep"}>Dubstep</option>
-                                <option value={this.state.genre = "Electronic"}>Electronic</option>
-                                <option value={this.state.genre = "Folk & Singer-Songwriter"}>Folk & Singer-Songwriter</option>
-                                <option value={this.state.genre = "Hip-Hop & Rap"}>Hip-Hop & Rap</option>
-                                <option value={this.state.genre = "House"}>House</option>
-                                <option value={this.state.genre = "Indie"}>Indie</option>
-                                <option value={this.state.genre = "Jazz & Blues"}>Jazz & Blues</option>
-                                <option value={this.state.genre = "Latin"}>Latin</option>
-                                <option value={this.state.genre = "Metal"}>Metal</option>
-                                <option value={this.state.genre = "Piano"}>Piano</option>
-                                <option value={this.state.genre = "Pop"}>Pop</option>
-                                <option value={this.state.genre = "R&B & Soul"}>R&B & Soul</option>
-                                <option value={this.state.genre = "Reggae"}>Reggae</option>
-                                <option value={this.state.genre = "Reggaeton"}>Reggaeton</option>
-                                <option value={this.state.genre = "Rock"}>Rock</option>
-                                <option value={this.state.genre = "Soundtrack"}>Soundtrack</option>
-                                <option value={this.state.genre = "Techno"}>Techno</option>
-                                <option value={this.state.genre = "Trance"}>Trance</option>
-                                <option value={this.state.genre = "Trap"}>Trap</option>
-                                <option value={this.state.genre = "Triphop"}>Triphop</option>
-                                <option value={this.state.genre = "World"}>World</option>
+                                <option value="Alternative Rock">Alternative Rock</option>
+                                <option value="Ambient">Ambient</option>
+                                <option value="Classical">Classical</option>
+                                <option value="Country">Country</option>
+                                <option value="Dance & EDM">Dance & EDM</option>
+                                <option value="Dancehall">Dancehall</option>
+                                <option value="Deep House">Deep House</option>
+                                <option value="Disco">Disco</option>
+                                <option value="Drum and Bass">Drum and Bass</option>
+                                <option value="Dubstep">Dubstep</option>
+                                <option value="Electronic">Electronic</option>
+                                <option value="Folk & Singer-Songwriter">Folk & Singer-Songwriter</option>
+                                <option value="Hip-Hop & Rap">Hip-Hop & Rap</option>
+                                <option value="House">House</option>
+                                <option value="Indie">Indie</option>
+                                <option value="Jazz & Blues">Jazz & Blues</option>
+                                <option value="Latin">Latin</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Piano">Piano</option>
+                                <option value="Pop">Pop</option>
+                                <option value="R&B & Soul">R&B & Soul</option>
+                                <option value="Reggae">Reggae</option>
+                                <option value="Reggaeton">Reggaeton</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Soundtrack">Soundtrack</option>
+                                <option value="Techno">Techno</option>
+                                <option value="Trance">Trance</option>
+                                <option value="Trap">Trap</option>
+                                <option value="Triphop">Triphop</option>
+                                <option value="World">World</option>
                             </select>
                         </label>
 

@@ -11,31 +11,47 @@ class DiscoverPage extends React.Component {
 
     render() {
         if(!this.props.songs) return [];
+        
         const { songs } = this.props;
         
-        const hotChart = [];
+        let hotChart = [];
 
+        
         
         
         return(
-            <div className="discover-page">
+            <div className="discover-page-background">
 
-                <h2>Charts: New & hot</h2>
+                <div className="discover-page">
+                    <br />
+                    <h2>Charts: New & hot</h2>
 
-                <div className="discover-hot-chart">
-                    
-                    <ul>
-                        {
-                            songs.map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                        }
-                    </ul>
+                    <div className="discover-hot-chart">
+
+                        <ul>
+                            {
+                                songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                            }
+                        </ul>
+                    </div>
+
+                    <br />
+
+                    <h2>Charts: New & hot</h2>
+
+                    <div className="discover-hot-chart">
+
+                        <ul>
+                            {
+                                songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                            }
+                        </ul>
+                    </div>
+
                 </div>
-                    
-                    
-                    
-               
-                
+
             </div>
+            
         )
     }
 }

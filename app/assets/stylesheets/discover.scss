@@ -1,23 +1,35 @@
+.discover-page-background{
+    background-color: lightgrey;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+
 .discover-page {
     height: 100vh;
     width: 80vw;
     overflow: scroll;
     background-color: white;
     position: fixed;
-    top: 4vw;
+    top: 3vw;
+    
 }
 
 .discover-hot-chart {
     display: flex;
     flex-direction: row;
-    background-color: pink;
+    justify-content: space-around;
+    
     height: 35vh;
     width: 75vw;
-    overflow: scroll;
+    border-bottom: 1px solid lightgrey;
 }
 
 
 
 .dicover-hot-chart-item {
     float: left;
+    padding: 20px;
 }
