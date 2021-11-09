@@ -82,7 +82,6 @@ class UploadSongForm extends React.Component {
 
                         <label><span>Genre *</span>&nbsp;
                             <select onChange={this.update('genre')} value={this.state.genre}>
-                                <option selected disabled value="None">None</option>
                                 <option value="Alternative Rock">Alternative Rock</option>
                                 <option value="Ambient">Ambient</option>
                                 <option value="Classical">Classical</option>
