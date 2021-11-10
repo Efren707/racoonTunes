@@ -16,7 +16,7 @@ class SongShow extends React.Component {
     }
 
     editPage(){
-        this.props.history.push(`/api/songs/edit/${this.props.song.id}`)
+        this.props.history.push(`/songs/edit/${this.props.song.id}`)
     }
 
     render(){

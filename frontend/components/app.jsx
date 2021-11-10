@@ -20,8 +20,8 @@ const App = () => (
             <Route exact path="/" component={SplashContainer}/>
             <ProtectedRoute exact path="/discover" component={DiscoverContainer}/>
             <AuthRoute exact path="/upload" component={UploadSongFormContainer}/>
-            <AuthRoute exact path="/api/songs/edit/:id" component={EditSongFormContainer}/>
-            <ProtectedRoute exact path="/api/songs/:id" component={SongShowContainer}/>
+            <AuthRoute exact path="/songs/edit/:id" component={EditSongFormContainer}/>
+            <ProtectedRoute exact path="/songs/:id" component={SongShowContainer}/>
         </Switch>
     </div>
 );

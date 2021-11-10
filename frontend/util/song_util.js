@@ -32,12 +32,12 @@ export const createSong = song => {
 }
 
 export const updateSong = song => {
-    debugger
+    
     
     return $.ajax({
-        url: `/api/songs/${song.id}`,
-        method: 'POST',
-        data: {song},
+        url: `/api/songs/${song.get('song[id]')}`,
+        method: 'PATCH',
+        data: song,
         contentType: false,
         processData: false
     })

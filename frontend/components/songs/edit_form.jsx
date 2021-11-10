@@ -9,6 +9,8 @@ class EditSongForm extends React.Component {
         console.log(this.props.song);
         this.state = ({...this.props.song, id: this.props.match.params.id});
         this.handleSongSubmit = this.handleSongSubmit.bind(this);
+        this.handleAudio = this.handleAudio.bind(this);
+        this.handlePhoto = this.handlePhoto.bind(this);
     }
 
     componentDidMount(){
@@ -43,13 +45,16 @@ class EditSongForm extends React.Component {
         formData.append('song[description]', this.state.description);
         formData.append('song[author_id]', this.props.currentUser);
         formData.append('song[photo]', this.state.photoFile);
+        
         formData.append('song[audio]', this.state.audioFile);
+        console.log(this.state.audio, "audio");
+        console.log(this.state, "state");
+        console.log(this.state.photo, "photo");
 
-        formData.append('_method', 'patch');
         debugger
 
         this.props.updateCurrentSong(formData)
-        .then(song => history.push(`/api/songs/${song.song.id}`))
+        .then(song => history.push(`/songs/${song.song.id}`))
 
     }
 

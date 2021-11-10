@@ -40,10 +40,10 @@ export const createNewSong = song => dispatch => {
 }
 
 export const updateCurrentSong = song => dispatch => {
-    debugger
+    
     return SongApiUtil.updateSong(song)
     .then(song => {
-        debugger
+        
         return dispatch(receiveSong(song))})
 }
 
