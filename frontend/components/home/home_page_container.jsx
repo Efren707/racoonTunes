@@ -22,6 +22,7 @@ class HomePageContainer extends React.Component {
                    </div>
 
                     <img className="main-picture" src={window.homeIphonePic}></img>
+                    <img className="main-picture" src={window.homeSecondPic}></img>
                 </div>
             )
         } else {

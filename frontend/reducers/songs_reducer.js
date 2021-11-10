@@ -6,10 +6,11 @@ const songsReducer = (oldState={}, action) => {
 
     switch (action.type) {
         case RECEIVE_SONGS:
+            
             return action.songs;
         case RECEIVE_SONG:
-            nextState[action.song.id] = action.song;
             
+            nextState[action.song.id] = action.song;       
             return nextState;
         case REMOVE_SONG:
             delete nextState[action.songId];

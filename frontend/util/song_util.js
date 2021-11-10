@@ -9,7 +9,7 @@ export const receiveSong = songId => {
     return $.ajax({
         url: `/api/songs/${songId}`,
         method: 'GET',
-        data: {songId}
+        data: { songId }
     })
 }
 
@@ -32,10 +32,14 @@ export const createSong = song => {
 }
 
 export const updateSong = song => {
+    debugger
+    
     return $.ajax({
         url: `/api/songs/${song.id}`,
-        method: 'PATCH',
-        data: {song}
+        method: 'POST',
+        data: {song},
+        contentType: false,
+        processData: false
     })
 }
 

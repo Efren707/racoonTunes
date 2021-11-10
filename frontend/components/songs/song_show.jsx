@@ -20,6 +20,7 @@ class SongShow extends React.Component {
     }
 
     render(){
+        
         if(!this.props.song) return null;
         if(!this.props.currentUser) return null;
         const {song, currentUser} = this.props;
@@ -55,11 +56,14 @@ class SongShow extends React.Component {
 
 }
 
-const mSTP = (state, ownProps) => ({
-    song: state.entities.songs[ownProps.match.params.id],
-    currentUser: state.session,
-    currentUserId: state.session.id
-})
+const mSTP = (state, ownProps) => {
+    
+    return{
+        song: state.entities.songs[ownProps.match.params.id],
+        currentUser: state.session,
+        currentUserId: state.session.id
+    }   
+}
 
 const mDTP = dispatch => ({
     receiveCurrentSong: songId => dispatch(receiveCurrentSong(songId)),

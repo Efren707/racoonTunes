@@ -124,7 +124,7 @@ class UploadSongForm extends React.Component {
                         <br />
                         <br />
 
-                        <label>Photo</label>
+                        <label>Photo *</label>
                         <br/>
                         <input type='file' onChange={this.handlePhoto} accept="image/png, image/jpeg" />
                         <br />

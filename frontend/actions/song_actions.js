@@ -40,8 +40,11 @@ export const createNewSong = song => dispatch => {
 }
 
 export const updateCurrentSong = song => dispatch => {
+    debugger
     return SongApiUtil.updateSong(song)
-    .then(song => dispatch(receiveSong(song)))
+    .then(song => {
+        debugger
+        return dispatch(receiveSong(song))})
 }
 
 export const removeCurrentSong = songId => dispatch => {
