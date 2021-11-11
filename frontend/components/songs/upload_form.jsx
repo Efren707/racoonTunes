@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {Router } from "react-router-dom";
 import { createNewSong } from '../../actions/song_actions';
+import NavContainer from '../nav/nav';
 
 class UploadSongForm extends React.Component {
 
@@ -60,6 +61,7 @@ class UploadSongForm extends React.Component {
         
         return (
             <div className="upload-page">
+                <NavContainer/>
                 <div className="upload-form">
                     <form>
                         <br />

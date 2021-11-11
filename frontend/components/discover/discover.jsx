@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { receiveAllSongs } from '../../actions/song_actions';
 import SongIndexItem from '../songs/song_index_item';
+import NavContainer from '../nav/nav';
 
 class DiscoverPage extends React.Component {
 
@@ -40,6 +41,8 @@ class DiscoverPage extends React.Component {
         
         return(
             <div className="discover-page-background">
+
+                <NavContainer />
 
                 <div className="discover-page">
                     <br />

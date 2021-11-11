@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { updateCurrentSong, receiveCurrentSong } from '../../actions/song_actions';
+import NavContainer from "../nav/nav";
 
 class EditSongForm extends React.Component {
 
@@ -15,9 +16,7 @@ class EditSongForm extends React.Component {
 
     componentDidMount(){
         this.props.receiveCurrentSong(this.props.match.params.id)
-        .then(payload => this.setState(payload.song))
-        
-        debugger
+        .then(payload => this.setState(payload.song))        
     }
 
     update(field){
@@ -51,7 +50,7 @@ class EditSongForm extends React.Component {
         console.log(this.state, "state");
         console.log(this.state.photo, "photo");
 
-        debugger
+        
 
         this.props.updateCurrentSong(formData)
         .then(song => history.push(`/songs/${song.song.id}`))
@@ -61,16 +60,17 @@ class EditSongForm extends React.Component {
     render(){
         
         if(!this.props.song) return null;
-        debugger
+        
         return(
-            <div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+            <div className="edit-page-background">
+                <NavContainer/>
+                <div className="edit-page">
                 <form>
-
-                    <label>Title
+                    <br/>
+                    <br/>
+                    <h1>Update song</h1>
+                    <br/>
+                    <label><span>Title *</span>&nbsp;
                         <input value={this.state.song_name} onChange={this.update("song_name")}></input>
                     </label>
 
@@ -131,6 +131,7 @@ class EditSongForm extends React.Component {
                     <button  className="upload-button" onClick={this.handleSongSubmit}>Update Song</button>
 
                 </form>
+                </div>
             </div>
         )
     }

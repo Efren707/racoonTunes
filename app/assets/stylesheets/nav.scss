@@ -1,0 +1,17 @@
+.nav-bar{
+    width: 100vw;
+    height: 3vw;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upload-btn {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.upload-btn:hover {
+    color: white;
+} 

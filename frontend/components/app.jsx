@@ -17,11 +17,12 @@ const App = () => (
     <div className="app">
         <Modal />
         <Switch>
-            <Route exact path="/" component={SplashContainer}/>
+            
             <ProtectedRoute exact path="/discover" component={DiscoverContainer}/>
             <AuthRoute exact path="/upload" component={UploadSongFormContainer}/>
             <AuthRoute exact path="/songs/edit/:id" component={EditSongFormContainer}/>
             <ProtectedRoute exact path="/songs/:id" component={SongShowContainer}/>
+            <Route exact path="/" component={SplashContainer} />
         </Switch>
     </div>
 );

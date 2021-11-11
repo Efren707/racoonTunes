@@ -11,6 +11,7 @@ class Splash extends React.Component {
         super(props);
     }
 
+    
     render() {   
         
         return(
@@ -22,7 +23,7 @@ class Splash extends React.Component {
                             <Link to='/'>
                                 <img className="logo" src={window.logo} />
                             </Link>
-                            <h1>RacoonTunes</h1>
+                            &nbsp;<h1>RacoonTunes</h1>
                         </div>
                         <GreetingContainer />
                     </div>
