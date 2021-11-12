@@ -1,0 +1,97 @@
+.show-page-background {
+    background-color: lightgrey;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.show-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    background-color: white;
+    position: fixed;
+    top: 3vw;
+}
+
+.song-info {
+    position: fixed;
+    width: 78vw;
+    padding: 1vw;
+    background: rgb(114,78,63);
+    background: linear-gradient(94deg, rgba(114,78,63,1) 61%, rgba(0,0,0,1) 100%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-info-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-info h1 {
+    font-size: 50px;
+}
+
+.song-info h3 {
+    font-size: 15px;
+}
+
+.song-info p {
+    font-size: 20px;
+}
+
+.song-photo {
+    height: 50vh;
+    width: 50vh;
+    border: 1px solid lightgrey;
+}
+
+.song-page-buttons {
+    top: 40px;
+}
+
+.song-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.song-show-audio {
+    width: 50vw;
+}
+
+.song-show-button {
+    font-family: inter;
+    background-color: transparent;
+    width: 5vw;
+    height: 4vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+}
+
+.song-show-button:hover {
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.song-name{
+    background-color: black;
+    color: white;
+}
+
+.song-genre {
+    background-color: black;
+    color: white;
+}
+
+.rest-of-show-page {
+    position: fixed;
+    top: 62vh;
+    width: 70vw;
+    padding-left: 1vw;
+    
+}

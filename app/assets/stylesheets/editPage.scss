@@ -1,0 +1,48 @@
+.edit-page-background{
+    width: 100vw; 
+    height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-page {
+    position: fixed;
+    top: 3vw;
+    width: 80vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-page label {
+    display: block;
+}
+
+.edit-page span {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+}
+
+.edit-button {
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-size: 15px;
+  padding: 1vh 6.5vw;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.edit-form {
+    position: fixed;
+    top: 10vh;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    border: 3px solid black;
+    border-radius: 10px;
+}

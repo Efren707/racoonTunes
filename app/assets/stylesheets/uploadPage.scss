@@ -1,0 +1,39 @@
+.upload-page {   
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-form {
+    position: fixed;
+    top: 10vh;
+    
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.upload-form label {
+    display: block;
+}
+
+.upload-form span {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+}
+
+.upload-button {
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-size: 15px;
+  padding: 7px 120px;
+  border-radius: 10px;
+}

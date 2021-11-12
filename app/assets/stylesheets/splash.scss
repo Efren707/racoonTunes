@@ -1,0 +1,150 @@
+$splash-width: 80vw;
+$orange-button: orangered;
+
+.app {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logo {
+    height: 3.2vw;
+}
+
+.header-button {
+    background-color: rgb(206, 55, 0);
+    border: none;
+    height: 3.2vw;
+    font-size: 16px;
+    color: white;
+}
+
+.header-button:hover {
+    background-color: orangered;
+}
+
+.splash-header {
+    
+    background-color: black;
+    font-family: inter;
+    width: $splash-width;
+    height: 3vw;
+    position: fixed;
+}
+
+.splash-header h1 {
+    font-size: 30px;
+}
+
+.splash-logo-title {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.login-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 3vw;
+}
+
+.greeting-buttons {
+    border-radius: 12px;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.greeting-login {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 15px;
+  padding: 7px 14px;
+  border-radius: 10px;
+}
+
+.greeting-signup {
+  background-color: $orange-button;
+  border: 1px solid $orange-button;
+  color: white;
+  font-size: 15px;
+  padding: 7px 20px;
+  border-radius: 10px;
+}
+
+.login-form-container {
+    width: $splash-width * 0.3;
+    height: $splash-width * 0.6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container label {
+    display: block;
+}
+
+.login-form-container span {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+}
+
+.home-page{
+    width: $splash-width;
+    height: 100vh;
+}
+
+.main-picture{
+    width: $splash-width;
+    height: $splash-width * 0.37;
+}
+
+.demo-button {
+    background-color: $orange-button;
+    color: white;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: $splash-width*0.01 $splash-width*0.13;
+    border-radius: 10px;
+}
+
+.session-submit {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: $splash-width*0.01 $splash-width*0.13;
+    border-radius: 10px;
+}
+
+.other-form-buttom{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 3px 6px;
+    border-radius: 10px;
+}
+
+.home-page-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.home-page h2 {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.login-errors {
+    color: red;
+}
