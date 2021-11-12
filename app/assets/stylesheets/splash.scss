@@ -9,7 +9,19 @@ $orange-button: orangered;
 }
 
 .logo {
-    height: 3vw;
+    height: 3.2vw;
+}
+
+.header-button {
+    background-color: rgb(206, 55, 0);
+    border: none;
+    height: 3.2vw;
+    font-size: 16px;
+    color: white;
+}
+
+.header-button:hover {
+    background-color: orangered;
 }
 
 .splash-header {
@@ -86,7 +98,7 @@ $orange-button: orangered;
 
 .home-page{
     width: $splash-width;
-    height: 400vh;
+    height: 100vh;
 }
 
 .main-picture{
@@ -131,4 +143,8 @@ $orange-button: orangered;
 .home-page h2 {
     font-size: 24px;
     font-weight: 100;
+}
+
+.login-errors {
+    color: red;
 }

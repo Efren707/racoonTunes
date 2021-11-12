@@ -3,7 +3,13 @@
     height: 3vw;
     background-color: #333;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.nav-bar-inner{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 

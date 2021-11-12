@@ -64,10 +64,7 @@ class UploadSongForm extends React.Component {
                 <NavContainer/>
                 <div className="upload-form">
                     <form>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
+                        
                         <div>
                             <h1>Create your own song </h1>
                             <p>* Required fields</p>

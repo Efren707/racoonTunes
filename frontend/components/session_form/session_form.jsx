@@ -38,15 +38,22 @@ class SessionForm extends React.Component {
 
         e.preventDefault();
         const user = Object.assign({}, this.state); 
-        this.props.processForm(user).then(this.props.closeModal);
         
+        this.props.processForm(user).then(response => {
+            if(response.errors){
+                this.renderErrors();
+            } else {
+                this.props.closeModal();
+            }
+        })
     }
 
     renderErrors() {
+
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="login-errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -59,7 +66,7 @@ class SessionForm extends React.Component {
         let email;
         let name;
         let demo;
-
+        
         if(this.props.formType === 'signup'){
             email = <div><label><span>Email:</span>&nbsp;<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
             name = <div><label><span>Name:</span>&nbsp;<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
@@ -76,9 +83,9 @@ class SessionForm extends React.Component {
                     
                     <h2>Please {this.props.formType} or {this.props.otherForm}</h2>
                     
-                    
-                    
                     {this.renderErrors()}
+                    
+                    
                     <div className="login-form">
                         <br />
 

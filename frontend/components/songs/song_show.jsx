@@ -35,8 +35,8 @@ class SongShow extends React.Component {
         let deletebtn;
 
         if (this.props.currentUserId === song.author_id){
-            edit = <button onClick={this.editPage}>Edit</button>
-            deletebtn = <button onClick={this.deleteSong}>Delete</button>
+            edit = <button className="song-show-button" onClick={this.editPage}>Edit</button>
+            deletebtn = <button className="song-show-button" onClick={this.deleteSong}>Delete</button>
         }
         
         return(
@@ -45,24 +45,53 @@ class SongShow extends React.Component {
                 <NavContainer/>
                 <div className="show-page">
 
-
                     <div className="song-info">
 
-                        <img className="song-photo" src={song.photo} alt="song photo cover" />
-                        <h1>{song.song_name}</h1>
-                        <h3>{song.genre}</h3>
-                        <br />
-                        <p>{song.description}</p>
-                        <p>{currentUser.name}</p>
-                        <br />
-                        <audio controls src={song.audio} type="audio/mpeg" />
-                        <br />
-                        <br />
-                        {edit}&nbsp;
-                        {deletebtn}
-                    </div>
+                        <div className="song-text">
 
+                            <div className="song-info-top">
+                                <div className="song-title-genre">
+                                    
+
+                                    <h1>{song.song_name}</h1>
+                                    <br/>           
+                                    <h3>{song.genre}</h3>
+                                    
+                                </div>
+
+                                <div className="song-page-buttons">
+                                    {edit}
+                                    <br />
+                                    <br />
+                                    {deletebtn}
+                                </div>
+                            </div>
+                            
+                            <div> 
+                                <audio controls className="song-show-audio" src={song.audio} type="audio/mpeg" />
+                            </div>  
+                            
+                        </div>
+
+                        <div className="song-pic">
+                            <img className="song-photo" src={song.photo} alt="song photo cover" />
+                        </div>
+
+                        
+                    </div>
+                
+                    <div className="rest-of-show-page">
+                        <br/>
+                        <p>{song.description}</p>
+                        <br/>
+                        <br/>
+                        
+                        <h1>Comments</h1>
+                        
+                    </div>
+                
                 </div>
+      
             </div>
         )
     }

@@ -6,7 +6,6 @@
     justify-content: center;
 }
 
-
 .discover-page {
     height: 100vh;
     width: 80vw;
@@ -17,19 +16,26 @@
     
 }
 
+.discover-page h2 {
+    padding-left: 10px;
+}
+
 .discover-chart {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
     height: 35vh;
     width: 80vw;
     border-bottom: 1px solid lightgrey;
 }
 
-
-
 .dicover-item {
     float: left;
     padding: 20px;
+}
+
+.song-index-photo {
+    height: 12vw;
+    width: 12vw;
+    border: 1px solid lightgrey;
 }

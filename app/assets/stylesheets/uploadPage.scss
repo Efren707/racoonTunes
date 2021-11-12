@@ -1,19 +1,22 @@
-.upload-page {
-    
+.upload-page {   
     height: 100vh;
     display: flex;
     justify-content: center;
-
 }
 
 .upload-form {
     position: fixed;
-    top: 3vw;
-    width: 80vw;
-    height: 100vh;
+    top: 10vh;
+    
     background-color: white;
     display: flex;
     justify-content: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .upload-form label {

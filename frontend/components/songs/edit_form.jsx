@@ -65,7 +65,7 @@ class EditSongForm extends React.Component {
             <div className="edit-page-background">
                 <NavContainer/>
                 <div className="edit-page">
-                <form>
+                <form className="edit-form">
                     <br/>
                     <br/>
                     <h1>Update song</h1>
@@ -74,6 +74,8 @@ class EditSongForm extends React.Component {
                         <input value={this.state.song_name} onChange={this.update("song_name")}></input>
                     </label>
 
+                        <br />
+                    
                     <label><span>Genre *</span>&nbsp;
                         <select onChange={this.update('genre')} defaultValue={this.state.genre}>
                             <option value="Alternative Rock">Alternative Rock</option>
@@ -127,9 +129,10 @@ class EditSongForm extends React.Component {
                     <input type='file' onChange={this.handleAudio} accept="audio/mp3" />
                     <br />
                     <br />
+                    <br />
 
-                    <button  className="upload-button" onClick={this.handleSongSubmit}>Update Song</button>
-
+                    <button  className="edit-button" onClick={this.handleSongSubmit}>Update Song</button>
+                    <br/>
                 </form>
                 </div>
             </div>
@@ -139,7 +142,7 @@ class EditSongForm extends React.Component {
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         song: state.entities.songs[ownProps.match.params.id],
         currentUser: state.session.id,
