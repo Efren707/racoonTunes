@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from 'react-router-dom';
 import {createNewSong, receiveAllSongs} from '../../actions/song_actions';
-import SongIndexItem from "../songs/song_index_item";
+import SongHomeIndexItem from "./home_page_song_index";
 import {openModal} from "../../actions/modal_actions";
 import GreetingContainer from '../greeting/greeting_container';
 
@@ -33,7 +33,7 @@ class HomePageContainer extends React.Component {
                    <div className="splash-chart">
                             <ul>
                                 {
-                                    songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(0, 5).map((song, index) => <SongHomeIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
                     </div>
@@ -41,7 +41,7 @@ class HomePageContainer extends React.Component {
                     <div className="splash-chart">
                             <ul>
                                 {
-                                    songs.slice(5, 10).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(5, 10).map((song, index) => <SongHomeIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
                     </div>
