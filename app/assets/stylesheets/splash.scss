@@ -8,6 +8,24 @@ $orange-button: orangered;
     justify-content: center;
 }
 
+.home-page{
+    width: $splash-width;
+    background-color: white;
+}
+
+.home-page-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.splash-chart { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .logo {
     height: 3.2vw;
 }
@@ -15,7 +33,7 @@ $orange-button: orangered;
 .header-button {
     background-color: rgb(206, 55, 0);
     border: none;
-    height: 3.2vw;
+    height: 3vw;
     font-size: 16px;
     color: white;
 }
@@ -25,12 +43,11 @@ $orange-button: orangered;
 }
 
 .splash-header {
-    
     background-color: black;
     font-family: inter;
     width: $splash-width;
     height: 3vw;
-    position: fixed;
+    z-index: 7;
 }
 
 .splash-header h1 {
@@ -56,7 +73,6 @@ $orange-button: orangered;
     display: flex;
     flex-direction: row;
     align-items: center;
-    
 }
 
 .greeting-login {
@@ -96,14 +112,14 @@ $orange-button: orangered;
     width: 100px;
 }
 
-.home-page{
-    width: $splash-width;
-    height: 100vh;
-}
-
 .main-picture{
     width: $splash-width;
-    height: $splash-width * 0.37;
+    height: $splash-width * 0.4;
+}
+
+.content-picture{
+    width: $splash-width;
+    height: $splash-width * 0.35;
 }
 
 .demo-button {
@@ -133,13 +149,6 @@ $orange-button: orangered;
     border-radius: 10px;
 }
 
-.home-page-content {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 .home-page h2 {
     font-size: 24px;
     font-weight: 100;
@@ -148,3 +157,4 @@ $orange-button: orangered;
 .login-errors {
     color: red;
 }
+

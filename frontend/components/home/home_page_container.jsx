@@ -29,21 +29,28 @@ class HomePageContainer extends React.Component {
                         <h2>Hear what’s trending for free in the RacoonTunes community</h2>
                    </div>
 
-                   <div className="discover-chart">
-
-                        <ul>
-                            {
-                                songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                            }
-                        </ul>
+                   <div className="splash-chart">
+                            <ul>
+                                {
+                                    songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
                     </div>
 
-                    <img className="main-picture" src={window.homeIphonePic}></img>
-                    <img className="main-picture" src={window.homeSecondPic}></img>
+                    <div className="splash-chart">
+                            <ul>
+                                {
+                                    songs.slice(5, 10).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
+                    </div>
+                    
+                    <img className="content-picture" src={window.homeIphonePic}></img>
+                    <img className="content-picture" src={window.homeSecondPic}></img>
+                    
+                  
                 </div>
             )
-        } else {
-            return null;
         }
         
     }
