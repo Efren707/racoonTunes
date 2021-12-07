@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {receiveCurrentSongComments, createNewComment, removeCurrentComment} from '../../actions/comment_actions';
+import {receiveAllComments, createNewComment, removeCurrentComment} from '../../actions/comment_actions';
 
 class Comment extends React.Component {
 
@@ -10,7 +10,7 @@ class Comment extends React.Component {
     }
 
     componentDidMount(){
-        this.props.receiveComments()
+        this.props.receiveComments();
     }
 
     deleteComment(){
@@ -18,10 +18,13 @@ class Comment extends React.Component {
     }
 
     render() {
-        const {song} = this.props;
+
+        const {comms} = this.props;
+        
         return (
             <div>
                 <h1>hello</h1>
+                {comms}
             </div>
         )
     }
@@ -32,12 +35,13 @@ const mSTP = (state) => {
 
     return {
         currentUser: state.session,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        comments: state.comments
     }
 }
 
 const mDTP = dispatch => ({
-    receiveComments: songId => dispatch(receiveCurrentSongComments(songId)),
+    receiveComments: () => dispatch(receiveAllComments()),
     createComment: (comment) => dispatch(createNewComment(comment)),
     deleteComment: (commentId) => dispatch(removeCurrentComment(commentId))
 })

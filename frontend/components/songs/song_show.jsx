@@ -86,9 +86,7 @@ class SongShow extends React.Component {
                         <p>{song.description}</p>
                         <br/>
                         <br/>
-                        
-                
-                        
+                                            
                     </div>
                 
                 </div>
