@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { receiveCurrentSong, removeCurrentSong } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
+import CommentsContainer from '../comments/comments'
 
 class SongShow extends React.Component {
 
@@ -86,7 +87,7 @@ class SongShow extends React.Component {
                         <br/>
                         <br/>
                         
-                        <h1>Comments</h1>
+                
                         
                     </div>
                 

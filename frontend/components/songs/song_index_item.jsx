@@ -7,15 +7,12 @@ class SongIndexItem extends React.Component {
         const {song} = this.props;
 
         return(
-   
 
-                <li className="dicover-item">
-                    <Link to={`/songs/${song.id}`}><img className="song-index-photo" src={song.photo} alt="song photo cover" /></Link>
+            <li className="dicover-item">
+                <Link to={`/songs/${song.id}`}><img className="song-index-photo" src={song.photo} alt="song photo cover" /></Link>
 
-                    <h1>{song.song_name}</h1>
-                </li>
-            
-            
+                <h1>{song.song_name}</h1>
+            </li>            
             
         )
     }

@@ -35,7 +35,7 @@ export const receiveCurrentComment = commentId => dispatch => {
 }
 
 export const createNewComment = comment => dispatch => {
-    return CommentApiUtil.createSong(comment)
+    return CommentApiUtil.createComment(comment)
     .then(comm => dispatch(receiveComment(comm)))
 }
 
