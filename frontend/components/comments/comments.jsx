@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {receiveAllComments, createNewComment, removeCurrentComment} from '../../actions/comment_actions';
+import CommentItem from './comment_item';
 
 class Comment extends React.Component {
 
@@ -18,13 +19,15 @@ class Comment extends React.Component {
     }
 
     render() {
-
-        const {comms} = this.props;
+        if(!this.props.comments) return [];
+        const {comments} = this.props;
         
         return (
             <div>
                 <h1>hello</h1>
-                {comms}
+                <ul>{
+                    comments.map((comment, index) => <CommentItem comment={comment} index={index} key={comment.id}/>)
+                }</ul>
             </div>
         )
     }
@@ -36,7 +39,7 @@ const mSTP = (state) => {
     return {
         currentUser: state.session,
         currentUserId: state.session.id,
-        comments: state.comments
+        comments: Object.values(state.entities.comments)
     }
 }
 
