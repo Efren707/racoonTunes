@@ -1,29 +1,39 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {receiveAllComments, createNewComment, removeCurrentComment} from '../../actions/comment_actions';
+
 import CommentItem from './comment_item';
 
 class Comment extends React.Component {
 
     constructor(props) {
         super(props);
+        
     }
 
     componentDidMount(){
         this.props.receiveComments();
+        
     }
 
     render() {
         if(!this.props.comments) return [];
 
-        const {songs, comments} = this.props;
+        const {song, comments} = this.props;
         
+        let songComments = [];
+
+        comments.map((comm) => {
+            if(song.id === comm.song_id){
+                songComments.push(comm)
+            }
+        })
         return (
             <div>
                 
                 <ul>
                     {
-                        comments.map((comment, idx) => <CommentItem comment={comment} index={idx} key={comment.id} />)
+                        songComments.map((comment, idx) => <CommentItem comment={comment} index={idx} key={comment.id} />)
                     }
                 </ul>
             
@@ -36,6 +46,7 @@ class Comment extends React.Component {
 const mSTP = (state, ownProps) => {
     return {
         comments: Object.values(state.entities.comments),
+        
         currentUser: state.session.id,
     }
 }

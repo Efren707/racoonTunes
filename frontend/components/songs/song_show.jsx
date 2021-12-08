@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { receiveCurrentSong, removeCurrentSong } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
 import CommentsContainer from '../comments/comments'
+import CommentForm from '../comments/comment_form'
 
 class SongShow extends React.Component {
 
@@ -82,7 +83,8 @@ class SongShow extends React.Component {
                     </div>
                 
                     <div className="rest-of-show-page">
-                        <CommentsContainer/>
+                        <CommentForm song={song} user={currentUser} />
+                        <CommentsContainer song={song} />
                                             
                     </div>
                 
