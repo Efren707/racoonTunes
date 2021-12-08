@@ -12,7 +12,6 @@ class Comment extends React.Component {
 
     componentDidMount(){
         this.props.receiveComments();
-        
     }
 
     render() {
@@ -27,6 +26,9 @@ class Comment extends React.Component {
                 songComments.push(comm)
             }
         })
+
+        songComments = songComments.reverse();
+
         return (
             <div>
                 
@@ -52,8 +54,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     receiveComments: () => dispatch(receiveAllComments()),
-    createComment: comm => dispatch(createNewComment(comm)),
-    deleteComment: commentId => dispatch(removeCurrentComment(commentId))
 })
 
 const CommentsContainer = connect(mSTP, mDTP)(Comment);

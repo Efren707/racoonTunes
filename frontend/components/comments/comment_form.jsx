@@ -27,7 +27,6 @@ class CreateCommentForm extends React.Component {
 
     handleCommentSubmit(e){
         e.preventDefault();
-        
         this.props.createNewComment(this.state)
     }
 

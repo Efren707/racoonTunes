@@ -6,14 +6,21 @@ class CommentIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = this.props.comment;
         this.deleteComment = this.deleteComment.bind(this);
+    }
+
+    componentWillUnmount(){
+        this.props.comment
     }
 
     deleteComment(){
         this.props.removeComment(this.props.comment)
+        
     }
 
     render() {
+        if(!this.props.comment) {return null}
         const {comment, currentUser} = this.props;
 
         let deleteButton;
