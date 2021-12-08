@@ -7,7 +7,6 @@ class EditSongForm extends React.Component {
 
     constructor(props) {
         super(props);  
-        console.log(this.props.song);
         this.state = ({...this.props.song, id: this.props.match.params.id});
         this.handleSongSubmit = this.handleSongSubmit.bind(this);
         this.handleAudio = this.handleAudio.bind(this);
