@@ -10,7 +10,6 @@ import EditSongFormContainer from './songs/edit_form';
 import SongShowContainer from './songs/song_show';
 import DiscoverContainer from './discover/discover';
 import SplashContainer from './splash/splash';
-import CommentsContainer from './comments/comments';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -23,7 +22,6 @@ const App = () => (
             <AuthRoute exact path="/upload" component={UploadSongFormContainer}/>
             <AuthRoute exact path="/songs/edit/:id" component={EditSongFormContainer}/>
             <ProtectedRoute exact path="/songs/:id" component={SongShowContainer}/>
-            <ProtectedRoute exact path="/comments" component={CommentsContainer}/>
             <Route exact path="/" component={SplashContainer} />
         </Switch>
     </div>

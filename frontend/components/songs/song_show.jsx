@@ -82,10 +82,7 @@ class SongShow extends React.Component {
                     </div>
                 
                     <div className="rest-of-show-page">
-                        <br/>
-                        <p>{song.description}</p>
-                        <br/>
-                        <br/>
+                        <CommentsContainer/>
                                             
                     </div>
                 

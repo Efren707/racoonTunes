@@ -7,7 +7,6 @@ class Comment extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = ({...this.props.comments})
     }
 
     componentDidMount(){
@@ -17,12 +16,17 @@ class Comment extends React.Component {
     render() {
         if(!this.props.comments) return [];
 
-        const {comments} = this.props;
+        const {songs, comments} = this.props;
         
         return (
             <div>
-                <h1>hello</h1>
                 
+                <ul>
+                    {
+                        comments.map((comment, idx) => <CommentItem comment={comment} index={idx} key={comment.id} />)
+                    }
+                </ul>
+            
             </div>
         )
     }
@@ -31,7 +35,7 @@ class Comment extends React.Component {
 
 const mSTP = (state, ownProps) => {
     return {
-        
+        comments: Object.values(state.entities.comments),
         currentUser: state.session.id,
     }
 }
