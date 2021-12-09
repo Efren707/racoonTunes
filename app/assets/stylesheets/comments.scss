@@ -1,4 +1,25 @@
 .comment-form{
     display: flex;
-    
+}
+
+.comment-form-input{
+    border: 5px solid lightgrey;
+    width: 50vw;
+    height: 3vh;
+}
+
+.comment-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    padding-bottom: 10px;
+}
+
+.comment-item p {
+    font-size: 13px;
+}
+
+.delete-btn {
+    font-size: 10px;
 }

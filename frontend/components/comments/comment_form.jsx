@@ -40,10 +40,9 @@ class CreateCommentForm extends React.Component {
             <div className="comment-form">
                 
                 <form onSubmit={this.handleCommentSubmit}>
-                    <input placeholder="Write a comment" type="text" value={this.state.body} onChange={this.update('body')} />
+                    <input className="comment-form-input" placeholder="Write a comment" type="text" value={this.state.body} onChange={this.update('body')} />
                 </form>
 
-            
             </div>
         )
     }

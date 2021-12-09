@@ -30,12 +30,12 @@ class CommentIndexItem extends React.Component {
         let deleteButton;
 
         if(comment.author_id === currentUser.id){
-            deleteButton = <button onClick={this.deleteComment}>delete</button>
+            deleteButton = <button className="delete-btn" onClick={this.deleteComment}>🗑️</button>
         }
 
         return(
 
-            <li>
+            <li className="comment-item">
                 <p>{comment.body}</p>
                 {deleteButton}
             </li>            
