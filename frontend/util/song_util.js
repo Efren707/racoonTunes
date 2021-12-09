@@ -31,9 +31,7 @@ export const createSong = song => {
     })
 }
 
-export const updateSong = song => {
-    
-    
+export const updateSong = song => { 
     return $.ajax({
         url: `/api/songs/${song.get('song[id]')}`,
         method: 'PATCH',
