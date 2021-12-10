@@ -2,16 +2,30 @@ import React from 'react';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { receiveAllUsers, receiveOneUser } from '../../actions/user_actions';
+import { receiveAllSongs } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
+import SongIndexItem from '../songs/song_index_item';
 
 class UserShow extends React.Component {
 
+    componentDidMount(){
+        this.props.receiveAllSongs();
+    }
     
     render(){
         if(!this.props.user) return null;
+        if(!this.props.songs) return [];
 
-        const { user } = this.props;
+        const { user, songs } = this.props;
         
+        let userSongs = [];
+
+        songs.map((song) => {
+            if(song.author_id === user.id) {
+                userSongs.push(song)
+            }
+        })
+
         return(
             
             <div className="user-show-page">
@@ -27,10 +41,18 @@ class UserShow extends React.Component {
                            
                             <h2>{user.username}</h2>
                         </div>
-                        
+
                     </div>
 
+                    <div className="user-songs">
 
+                        <ul>
+                            {
+                                songs.map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                            }
+                        </ul>
+
+                    </div>
 
 
                 </div>
@@ -46,12 +68,14 @@ const mSTP = (state, ownProps) => {
     return{
         user: state.entities.users[state.session.id],
         currentUser: state.session,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        songs: Object.values(state.entities.songs)
     }   
 }
 
 const mDTP = dispatch => ({
     receiveUser: userId => dispatch(receiveOneUser(userId)),
+    receiveAllSongs: () => dispatch(receiveAllSongs())
 })
 
 const UserShowContainer = connect(mSTP, mDTP)(UserShow);

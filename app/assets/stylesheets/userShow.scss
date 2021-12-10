@@ -4,16 +4,17 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .user-show{
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
     width: 80vw;
     background-color: white;
+    
 }
 
 .user-show-info{
@@ -52,4 +53,11 @@
     background-color: black;
     color: white;
     border: 7px solid black;
+}
+
+.user-songs{
+    width: 80vw;
+    height: 35vh;
+    background-color: blue;
+    
 }
