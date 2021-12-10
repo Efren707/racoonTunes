@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
 
         e.preventDefault();
         const user = Object.assign({}, this.state); 
-        
+
         this.props.processForm(user).then(response => {
             if(response.errors){
                 this.renderErrors();
@@ -78,13 +78,11 @@ class SessionForm extends React.Component {
         
         return (
             <div className="login-form-container">
+                <h2>Please {this.props.formType} or {this.props.otherForm}</h2>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <br />
                     
-                    <h2>Please {this.props.formType} or {this.props.otherForm}</h2>
-                    
                     {this.renderErrors()}
-                    
                     
                     <div className="login-form">
                         <br />
@@ -99,7 +97,7 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
+                       
                         <br />
                         <label><span>Password:</span>&nbsp;
                             <input type="password"
