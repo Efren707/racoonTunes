@@ -20,8 +20,17 @@ class UserShow extends React.Component {
                 <div className="user-show">
 
                     <div className="user-show-info">
-                        <img src={user.profile_pic}/>                    
+                        <img className="user-profile-pic" src={user.profile_pic}/>                    
+                    
+                        <div className="user-name">
+                            <h1>{user.name}</h1>
+                           
+                            <h2>{user.username}</h2>
+                        </div>
+                        
                     </div>
+
+
 
 
                 </div>

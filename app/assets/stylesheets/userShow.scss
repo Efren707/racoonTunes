@@ -20,4 +20,36 @@
     width: 80vw;
     height: 35vh;
     background: rgb(255,110,0);
+    display: flex;
+    align-items: center;
+
+}
+
+.user-profile-pic{
+    height: 31vh;
+    width: 31vh;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+.user-name{
+    padding-left: 20px;
+    height: 70%;
+}
+
+.user-name h1 {
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    background-color: black;
+    color: white;
+    border: 7px solid black;
+}
+
+.user-name h2 {
+    font-size: 20px;
+    font-weight: lighter;
+    background-color: black;
+    color: white;
+    border: 7px solid black;
 }

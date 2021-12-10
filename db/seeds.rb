@@ -16,6 +16,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('songs')
 
 demouser = User.create!({username: 'demoUser', password: '123456', name: 'Demo User', email: 'demouser@user.com'})
+demo_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/demoProfile.jpg")
+demouser.profile_pic.attach(io: demo_pic, filename: "demoProfile.jpg")
+
 
 travis = User.create!({username: 'LaFlame', password: '123456', name: 'Travis Scott', email: 'laflame@user.com'})
 travis_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/travisProfile.jpg")

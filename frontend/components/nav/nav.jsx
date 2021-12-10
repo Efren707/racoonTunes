@@ -18,10 +18,13 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     &nbsp;<h1>RacoonTunes</h1>
                 </div>
                 <div className="nav-buttons">
-                    <Link className ="upload-btn" to={`/users/${currentUser.id}`}>Profile</Link>
-                    &nbsp;&nbsp;
+                    
                     <Link className ="upload-btn" to="/upload">Upload</Link>
                     &nbsp;&nbsp;
+
+                    <Link className ="upload-btn" to={`/users/${currentUser.id}`}>Profile</Link>
+                    &nbsp;&nbsp;
+                    
                     <button className="header-button" onClick={logout}>Log Out</button>
                 </div>
             </div>
