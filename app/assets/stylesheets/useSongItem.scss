@@ -1,0 +1,26 @@
+.user-song-index-photo {
+    height: 10vw;
+    width: 10vw;
+    border: 1px solid lightgrey;
+}
+
+.user-item{
+    display: flex;
+    padding-top: 7.5px;
+    padding-left: 12px;
+}
+
+.user-song-item-name{
+    padding-left: 10px;
+    padding-top: 7px;
+    
+}
+
+.user-song-item-name h1{
+    font-size: 20px;
+}
+
+.user-song-item-name h2{
+    font-size: 13px;
+    padding-bottom: 5px;
+}

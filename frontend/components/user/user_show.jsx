@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { receiveAllUsers, receiveOneUser } from '../../actions/user_actions';
 import { receiveAllSongs } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
-import SongIndexItem from '../songs/song_index_item';
+import UserSongIndexItem from './user_show_songs';
 
 class UserShow extends React.Component {
 
@@ -21,7 +21,7 @@ class UserShow extends React.Component {
         let userSongs = [];
 
         songs.map((song) => {
-            if(song.author_id === user.id) {
+            if(song.author_id === this.props.currentUserId) {
                 userSongs.push(song)
             }
         })
@@ -34,8 +34,9 @@ class UserShow extends React.Component {
                 <div className="user-show">
 
                     <div className="user-show-info">
+            
                         <img className="user-profile-pic" src={user.profile_pic}/>                    
-                    
+            
                         <div className="user-name">
                             <h1>{user.name}</h1>
                            
@@ -48,7 +49,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                songs.map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                userSongs.map((song, index) => <UserSongIndexItem song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
