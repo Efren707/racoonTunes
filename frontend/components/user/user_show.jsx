@@ -8,13 +8,23 @@ class UserShow extends React.Component {
 
     
     render(){
-        
+        if(!this.props.user) return null;
+
         const { user } = this.props;
         
         return(
             
-            <div>
-                <h1>hello</h1>
+            <div className="user-show-page">
+                <NavContainer/>
+
+                <div className="user-show">
+
+                    <div className="user-show-info">
+                        <img src={user.profile_pic}/>                    
+                    </div>
+
+
+                </div>
                 
             </div>
         )
@@ -25,6 +35,7 @@ class UserShow extends React.Component {
 const mSTP = (state, ownProps) => {
     
     return{
+        user: state.entities.users[state.session.id],
         currentUser: state.session,
         currentUserId: state.session.id
     }   

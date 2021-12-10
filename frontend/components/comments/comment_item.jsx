@@ -8,19 +8,11 @@ class CommentIndexItem extends React.Component {
         super(props);
         this.state = this.props.comment;
         this.deleteComment = this.deleteComment.bind(this);
-        this.removeOldComment = this.removeOldComment.bind(this);
-    }
-
-    componentWillUnmount(){
-        this.props.comment
-    }
-
-    removeOldComment(){
-        this.setState({})
     }
 
     deleteComment(){
-        this.props.removeComment(this.props.comment).then(this.removeOldComment())
+        this.props.removeComment(this.props.comment)
+        this.setState({ undefined})
     }
 
     render() {

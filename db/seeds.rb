@@ -16,9 +16,18 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('songs')
 
 demouser = User.create!({username: 'demoUser', password: '123456', name: 'Demo User', email: 'demouser@user.com'})
+
 travis = User.create!({username: 'LaFlame', password: '123456', name: 'Travis Scott', email: 'laflame@user.com'})
+travis_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/travisProfile.jpg")
+travis.profile_pic.attach(io: travis_pic, filename: "travisProfile.jpg")
+
 thug = User.create!({username: 'YoungThug', password: '123456', name: 'Young Thug', email: 'thugger@user.com'})
+thug_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/thugProfile.jpg")
+thug.profile_pic.attach(io: thug_pic, filename: "thugProfile.jpg")
+
 frank = User.create!({username: 'FrankOcean', password: '123456', name: 'Frank Ocean', email: 'franky@user.com'})
+frank_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
+frank.profile_pic.attach(io: frank_pic, filename: "frankProfile.png")
 
 song1 = Song.create!({song_name: 'Stargazing', genre: "Hip-Hop & Rap", description: "", author_id: travis.id})
 song1_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/astroworld.jpg")

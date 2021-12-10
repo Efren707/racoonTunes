@@ -1,0 +1,23 @@
+.user-show-page{
+    background-color: lightgrey;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-show{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    background-color: white;
+}
+
+.user-show-info{
+    width: 80vw;
+    height: 35vh;
+    background: rgb(255,110,0);
+}
