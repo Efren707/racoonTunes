@@ -42,9 +42,7 @@ export const createNewSong = song => dispatch => {
 export const updateCurrentSong = song => dispatch => {
     
     return SongApiUtil.updateSong(song)
-    .then(song => {
-        
-        return dispatch(receiveSong(song))})
+    .then(song => { return dispatch(receiveSong(song)) })
 }
 
 export const removeCurrentSong = songId => dispatch => {

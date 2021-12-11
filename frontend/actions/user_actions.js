@@ -22,3 +22,9 @@ export const receiveOneUser = () => dispatch => {
     return UserApiUtil.receiveUser()
     .then(user => dispatch(receiveUser(user)))
 }
+
+export const updateCurrentUser = user => dispatch => {
+    
+    return UserApiUtil.updateUser(user)
+    .then(user => { return dispatch(receiveUser(user)) })
+}
