@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { receiveAllUsers, receiveOneUser } from '../../actions/user_actions';
+import { receiveOneUser } from '../../actions/user_actions';
 import { receiveAllSongs } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
 import UserSongIndexItem from './user_show_songs';
@@ -76,7 +76,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     receiveUser: userId => dispatch(receiveOneUser(userId)),
-    receiveAllSongs: () => dispatch(receiveAllSongs())
+    receiveAllSongs: () => dispatch(receiveAllSongs()),
 })
 
 const UserShowContainer = connect(mSTP, mDTP)(UserShow);

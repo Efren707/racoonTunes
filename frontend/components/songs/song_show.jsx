@@ -83,11 +83,22 @@ class SongShow extends React.Component {
                     </div>
                 
                     <div className="rest-of-show-page">
-                        <CommentForm song={song} user={currentUser} />
-                        <br/>
-                        <CommentsContainer song={song} />
-                                            
+                       
+                        <div className="song-show-comments">
+                            <CommentForm song={song} user={currentUser} />
+                            <br/>
+                            <CommentsContainer song={song} />
+                        </div>
+                        
+                        <div className="song-show-description">
+                            <h3>Description</h3>
+                            <br/>
+                            <p>{song.description}</p>
+                        </div>      
+
                     </div>
+
+                    
                 
                 </div>
       

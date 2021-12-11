@@ -89,8 +89,12 @@
 
 .rest-of-show-page {
     position: fixed;
-    top: 62vh;
-    width: 70vw;
-    padding-left: 1vw;
-    
+    top: 64vh;
+    width: 76vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-show-description{
+    width: 20vw;
 }
