@@ -23,3 +23,26 @@
 .delete-btn {
     font-size: 10px;
 }
+
+.comment-item-user-pic{
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+}
+
+.comment-item-content{
+    display: flex;
+    align-items: center;
+}
+
+.comment-item-content p {
+    padding-left: 3px;
+}
+
+.comment-item-content h4 {
+    font-size: 13px;
+    font-weight: 100;
+    color: grey;
+    padding-left: 3px;
+}
+

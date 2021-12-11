@@ -28,7 +28,14 @@ class CommentIndexItem extends React.Component {
         return(
 
             <li className="comment-item">
-                <p>{comment.body}</p>
+                <div className="comment-item-content">
+                    <img className="comment-item-user-pic" src={currentUser.profile_pic} />
+                    <div>
+                        <h4>{currentUser.username}</h4>
+                        <p>{comment.body}</p>
+                    </div>
+                </div>
+                
                 {deleteButton}
             </li>            
             
