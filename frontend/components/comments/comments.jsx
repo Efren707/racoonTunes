@@ -30,7 +30,7 @@ class Comment extends React.Component {
         songComments = songComments.reverse();
 
         return (
-            <div>
+            <div className="comments-div">
                 
                 <ul>
                     {

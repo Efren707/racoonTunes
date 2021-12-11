@@ -14,6 +14,7 @@
     background-color: white;
     position: fixed;
     top: 3vw;
+    
 }
 
 .song-info {
@@ -23,6 +24,7 @@
     background: rgb(255,110,0);
     display: flex;
     justify-content: space-between;
+    
 }
 
 .song-info-top {
@@ -93,8 +95,10 @@
     width: 76vw;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .song-show-description{
     width: 20vw;
 }
+
