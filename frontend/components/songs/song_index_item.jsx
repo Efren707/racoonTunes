@@ -9,9 +9,9 @@ class SongIndexItem extends React.Component {
         return(
 
             <li className="dicover-item">
-                <Link to={`/songs/${song.id}`}><img className="song-index-photo" src={song.photo} alt="song photo cover" /></Link>
+                <img className="song-index-photo" src={song.photo} alt="song photo cover" />
 
-                <h1>{song.song_name}</h1>
+                <Link className="song-item-link" to={`/songs/${song.id}`}><h1>{song.song_name}</h1></Link>
             </li>            
             
         )

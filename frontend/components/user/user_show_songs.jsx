@@ -13,8 +13,11 @@ class UserSongIndexItem extends React.Component {
                     <Link to={`/songs/${song.id}`}><img className="user-song-index-photo" src={song.photo} alt="song photo cover" /></Link>
                     
                     <div className="user-song-item-name">
-                        <h2>{user.username}</h2>
-                        <h1>{song.song_name}</h1>
+                        <div>
+                            <h2>{user.username}</h2>
+                            <h1>{song.song_name}</h1>
+                        </div>
+                        
                         <audio controls className="song-show-audio" src={song.audio} type="audio/mpeg" />
                     </div>
                 </li> 

@@ -18,8 +18,17 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     &nbsp;<h1>RacoonTunes</h1>
                 </div>
                 <div className="nav-buttons">
-                    
-                    <Link className ="upload-btn" to="/upload">Upload</Link>
+
+                    <a className="upload-btn" href="https://github.com/Efren707">Github</a>
+                    &nbsp;&nbsp;
+
+                    <a className="upload-btn" href="https://www.linkedin.com/in/efren-bahena-419807172/">LinkedIn</a>
+                    &nbsp;&nbsp;
+
+                    <a className="upload-btn" href="https://angel.co/u/efren-bahena">AngelList</a>
+                    &nbsp;&nbsp;
+
+                    <Link className="upload-btn" to="/upload">Upload</Link>
                     &nbsp;&nbsp;
 
                     <Link className ="upload-btn" to={`/users/${currentUser.id}`}>Profile</Link>

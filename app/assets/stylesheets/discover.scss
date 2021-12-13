@@ -32,10 +32,16 @@
 .dicover-item {
     float: left;
     padding: 20px;
+    
 }
 
 .song-index-photo {
     height: 12vw;
     width: 12vw;
     border: 1px solid lightgrey;
+}
+
+.song-item-link{
+    text-decoration: none;
+    color: black;
 }

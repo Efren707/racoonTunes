@@ -65,3 +65,13 @@
     overflow-x:hidden; 
     overflow-y:auto;
 }
+
+.user-song-item-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-song-item-name audio {
+    padding-bottom: 10px;
+}

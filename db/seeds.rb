@@ -19,7 +19,6 @@ demouser = User.create!({username: 'demoUser', password: '123456', name: 'Demo U
 demo_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/demoProfile.jpg")
 demouser.profile_pic.attach(io: demo_pic, filename: "demoProfile.jpg")
 
-
 travis = User.create!({username: 'LaFlame', password: '123456', name: 'Travis Scott', email: 'laflame@user.com'})
 travis_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/travisProfile.jpg")
 travis.profile_pic.attach(io: travis_pic, filename: "travisProfile.jpg")
@@ -158,7 +157,6 @@ song21.photo.attach(io: song21_pic, filename: "bfmv.jpg")
 song21_song = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/allthesethingsihate.mp3")
 song21.audio.attach(io: song21_song, filename: "allthesethingsihate.mp3")
 
-comment1 = Comment.create!({author_id: 2, song_id: 1, body: "My favorite song on Astroworld"})
 comment2 = Comment.create!({author_id: 4, song_id: 8, body: "SLAT!"})
 comment3 = Comment.create!({author_id: 3, song_id: 15, body: "My favorite artist collab! :)"})
 comment4 = Comment.create!({author_id: 1, song_id: 1, body: "Demo User comment"})
