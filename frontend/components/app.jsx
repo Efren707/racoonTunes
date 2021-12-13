@@ -11,6 +11,7 @@ import SongShowContainer from './songs/song_show';
 import DiscoverContainer from './discover/discover';
 import SplashContainer from './splash/splash';
 import UserShowContainer from './user/user_show';
+import EditUserFormContainer from './user/user_edit'
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -24,6 +25,7 @@ const App = () => (
             <AuthRoute exact path="/songs/edit/:id" component={EditSongFormContainer}/>
             <ProtectedRoute exact path="/songs/:id" component={SongShowContainer}/>
             <ProtectedRoute exact path="/users/:id" component={UserShowContainer}/>
+            <ProtectedRoute exact path="/users/edit/:id" component={EditUserFormContainer}/>
             <Route exact path="/" component={SplashContainer} />
         </Switch>
     </div>

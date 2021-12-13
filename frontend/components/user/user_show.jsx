@@ -8,8 +8,18 @@ import UserSongIndexItem from './user_show_songs';
 
 class UserShow extends React.Component {
 
+
+    constructor(props) {
+        super(props);
+        this.editPage = this.editPage.bind(this);
+    }
+
     componentDidMount(){
         this.props.receiveAllSongs();
+    }
+
+    editPage(){
+        this.props.history.push(`/users/edit/${this.props.user.id}`)
     }
     
     render(){
@@ -42,6 +52,8 @@ class UserShow extends React.Component {
                            
                             <h2>{user.username}</h2>
                         </div>
+
+                        <button onClick={this.editPage}>Edit</button>
 
                     </div>
 
