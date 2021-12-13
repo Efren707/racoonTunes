@@ -9,6 +9,7 @@ class EditUserForm extends React.Component {
         super(props);  
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
 
     update(field){
@@ -18,9 +19,8 @@ class EditUserForm extends React.Component {
     }
     
     handleSubmit(e){
-        debugger
         e.preventDefault();
-        this.props.updateCurrentUser(this.state);
+        this.props.updateCurrentUser({...this.state});
     }
 
     render(){
