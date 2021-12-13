@@ -10,8 +10,8 @@ class CommentIndexItem extends React.Component {
         this.deleteComment = this.deleteComment.bind(this);
     }
 
-    deleteComment(){
-        this.setState();
+    deleteComment(e){
+        e.preventDefault();
         this.props.removeComment(this.props.comment);
     }
 

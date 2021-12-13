@@ -15,7 +15,7 @@ class EditSongForm extends React.Component {
 
     componentDidMount(){
         this.props.receiveCurrentSong(this.props.match.params.id)
-        .then(payload => this.setState(payload.song))        
+        .then(payload => this.setState(payload.song))   
     }
 
     update(field){
@@ -36,6 +36,7 @@ class EditSongForm extends React.Component {
         const { history } = this.props;
 
         e.preventDefault()
+
         const formData = new FormData();
         formData.append('song[id]', this.state.id);
         formData.append('song[song_name]', this.state.song_name);
@@ -43,14 +44,8 @@ class EditSongForm extends React.Component {
         formData.append('song[description]', this.state.description);
         formData.append('song[author_id]', this.props.currentUser);
         formData.append('song[photo]', this.state.photoFile);
-        
         formData.append('song[audio]', this.state.audioFile);
-        console.log(this.state.audio, "audio");
-        console.log(this.state, "state");
-        console.log(this.state.photo, "photo");
-
         
-
         this.props.updateCurrentSong(formData)
         .then(song => history.push(`/songs/${song.song.id}`))
 
