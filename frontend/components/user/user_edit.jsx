@@ -9,7 +9,6 @@ class EditUserForm extends React.Component {
         super(props);  
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
-        
     }
 
     update(field){
@@ -28,16 +27,16 @@ class EditUserForm extends React.Component {
 
     render(){
         
-        
         return(
             <div className="edit-page-background">
                 <NavContainer/>
                 <div className="edit-page">
-                <form onSubmit={this.handleSubmit} className="edit-form">
+                <form onChange={this.handleSubmit} accept="image/png, image/jpeg" className="edit-form">
                     <br/>
                     <br/>
                     <h1>Update Profile</h1>
                     <br/>
+
                     <label><span>Name *</span>&nbsp;
                         <input value={this.state.name} onChange={this.update("name")}></input>
                     </label>

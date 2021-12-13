@@ -18,6 +18,10 @@ class SongShow extends React.Component {
         this.props.receiveCurrentSong(this.props.match.params.id)
     }
 
+    componentDidUpdate(){
+        this.props.comments;
+    }
+
     editPage(){
         this.props.history.push(`/songs/edit/${this.props.song.id}`)
     }
@@ -113,7 +117,8 @@ const mSTP = (state, ownProps) => {
     return{
         song: state.entities.songs[ownProps.match.params.id],
         currentUser: state.session,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        comments: Object.values(state.entities.comments)
     }   
 }
 

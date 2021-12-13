@@ -14,6 +14,10 @@ class Comment extends React.Component {
         this.props.receiveComments();
     }
 
+    componentDidUpdate(){
+        this.props.receiveComments();
+    }
+
     render() {
         if(!this.props.comments) return [];
 
