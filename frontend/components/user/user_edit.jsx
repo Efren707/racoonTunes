@@ -7,7 +7,7 @@ class EditUserForm extends React.Component {
 
     constructor(props) {
         super(props);  
-        this.state = ({...this.props.user})
+        this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -18,8 +18,9 @@ class EditUserForm extends React.Component {
     }
     
     handleSubmit(e){
+        debugger
         e.preventDefault();
-        this.props.updateUser(this.state);
+        this.props.updateCurrentUser(this.state);
     }
 
     render(){
@@ -29,7 +30,7 @@ class EditUserForm extends React.Component {
             <div className="edit-page-background">
                 <NavContainer/>
                 <div className="edit-page">
-                <form className="edit-form">
+                <form onSubmit={this.handleSubmit} className="edit-form">
                     <br/>
                     <br/>
                     <h1>Update Profile</h1>
@@ -51,7 +52,7 @@ class EditUserForm extends React.Component {
                     </label>          
                     <br/>
                     <br/>
-                    <button  className="edit-button" onClick={this.handleSubmit}>Update</button>
+                    <button  className="edit-button">Update</button>
 
                 </form>
                 </div>
@@ -72,7 +73,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    updateUser: user => dispatch(updateCurrentUser(user))
+    updateCurrentUser: user => dispatch(updateCurrentUser(user))
 })
 
 const EditUserFormContainer = connect(mSTP, mDTP)(EditUserForm)
