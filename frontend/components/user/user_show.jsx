@@ -53,7 +53,7 @@ class UserShow extends React.Component {
                             <h2>{user.username}</h2>
                         </div>
 
-                        <button onClick={this.editPage}>Edit</button>
+                        <button className="user-edit-btn" onClick={this.editPage}>Edit</button>
 
                     </div>
 

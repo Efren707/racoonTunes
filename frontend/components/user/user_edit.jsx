@@ -55,7 +55,7 @@ class EditUserForm extends React.Component {
                     </label>          
                     <br/>
                     <br/>
-                    <button  className="edit-button">Update</button>
+                    <button className="edit-button">Update</button>
 
                 </form>
                 </div>
