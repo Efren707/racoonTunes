@@ -21,7 +21,7 @@ class EditUserForm extends React.Component {
         const { user, history } = this.props;
 
         e.preventDefault();
-        this.props.updateCurrentUser({...this.state})
+        this.props.updateCurrentUser(this.state)
         .then(history.push(`/users/${user.id}`))
     }
 
@@ -31,7 +31,7 @@ class EditUserForm extends React.Component {
             <div className="edit-page-background">
                 <NavContainer/>
                 <div className="edit-page">
-                <form onChange={this.handleSubmit} accept="image/png, image/jpeg" className="edit-form">
+                <form onSubmit={this.handleSubmit} className="edit-form">
                     <br/>
                     <br/>
                     <h1>Update Profile</h1>

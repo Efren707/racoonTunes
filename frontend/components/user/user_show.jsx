@@ -19,7 +19,7 @@ class UserShow extends React.Component {
     }
 
     editPage(){
-        this.props.history.push(`/users/edit/${this.props.user.id}`)
+        this.props.history.push(`/users/edit/${this.props.currentUserId}`)
     }
     
     render(){
