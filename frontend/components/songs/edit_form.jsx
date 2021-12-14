@@ -7,7 +7,7 @@ class EditSongForm extends React.Component {
 
     constructor(props) {
         super(props);  
-        this.state = ({...this.props.song, id: this.props.match.params.id});
+        this.state = {...this.props.song};
         this.handleSongSubmit = this.handleSongSubmit.bind(this);
         this.handleAudio = this.handleAudio.bind(this);
         this.handlePhoto = this.handlePhoto.bind(this);
@@ -25,11 +25,11 @@ class EditSongForm extends React.Component {
     }
 
     handlePhoto(e) {
-        this.setState({ photoFile: e.currentTarget.files[0] })
+        this.setState({ ["photo"]: e.currentTarget.files[0] })
     }
 
     handleAudio(e) {
-        this.setState({ audioFile: e.currentTarget.files[0] })
+        this.setState({ ["audio"]: e.currentTarget.files[0] })
     }
 
     handleSongSubmit(e) {
@@ -43,8 +43,8 @@ class EditSongForm extends React.Component {
         formData.append('song[genre]', this.state.genre);
         formData.append('song[description]', this.state.description);
         formData.append('song[author_id]', this.props.currentUser);
-        formData.append('song[photo]', this.state.photoFile);
-        formData.append('song[audio]', this.state.audioFile);
+        formData.append('song[photo]', this.state.photo);
+        formData.append('song[audio]', this.state.audio);
         
         this.props.updateCurrentSong(formData)
         .then(song => history.push(`/songs/${song.song.id}`))
@@ -71,7 +71,7 @@ class EditSongForm extends React.Component {
                         <br />
                     
                     <label><span>Genre *</span>&nbsp;
-                        <select onChange={this.update('genre')} defaultValue={this.state.genre}>
+                        <select onChange={this.update('genre')} defaultValue={this.props.song.genre}>
                             <option value="Alternative Rock">Alternative Rock</option>
                             <option value="Ambient">Ambient</option>
                             <option value="Classical">Classical</option>

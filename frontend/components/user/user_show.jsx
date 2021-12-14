@@ -8,14 +8,19 @@ import UserSongIndexItem from './user_show_songs';
 
 class UserShow extends React.Component {
 
-
     constructor(props) {
         super(props);
+        this.state = this.props.user;
         this.editPage = this.editPage.bind(this);
     }
 
     componentDidMount(){
+        this.props.receiveUser();
         this.props.receiveAllSongs();
+    }
+
+    componentDidUpdate(){
+        this.props.user;
     }
 
     editPage(){
