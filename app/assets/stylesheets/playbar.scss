@@ -5,8 +5,15 @@
     background-color: rgb(243, 243, 243);
     display: flex;
     justify-content: center;
+    align-items: center;    
 }
 
 .playbar-audio{
-    width: 80vw;
+    width: 60vw;
+}
+
+.playbar-photo{
+    height: 5vh;
+    width: 5vh;
+    padding-right: 4px;
 }

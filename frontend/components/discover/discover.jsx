@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { receiveAllSongs } from '../../actions/song_actions';
 import SongIndexItem from '../songs/song_index_item';
 import NavContainer from '../nav/nav';
+import PlaybarContainer from '../playbar/playbar';
 
 class DiscoverPage extends React.Component {
 
@@ -99,6 +100,8 @@ class DiscoverPage extends React.Component {
                     </div>
 
                 </div>
+
+                <PlaybarContainer/>
 
             </div>
             

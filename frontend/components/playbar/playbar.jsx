@@ -21,6 +21,8 @@ class Playbar extends React.Component {
         return(
             <div className="music-container">
                 <audio controls className="playbar-audio" src={song.audio} type="audio/mpeg" />
+                <img className="playbar-photo" src={song.photo}/>
+                <h4>{song.song_name}</h4>
             </div>
         )
     }

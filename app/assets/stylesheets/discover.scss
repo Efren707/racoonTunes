@@ -7,9 +7,9 @@
 }
 
 .discover-page {
-    height: 100vh;
+    height: 89vh;
     width: 80vw;
-    overflow: scroll;
+    overflow-y: scroll;
     background-color: white;
     position: fixed;
     top: 3vw;
@@ -44,4 +44,9 @@
 .song-item-link{
     text-decoration: none;
     color: black;
+}
+
+.discover-img-btn{
+    height: 12vw;
+    width: 12vw;
 }

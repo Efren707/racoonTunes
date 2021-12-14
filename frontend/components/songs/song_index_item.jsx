@@ -10,7 +10,6 @@ class SongIndexItem extends React.Component {
 
             <li className="dicover-item">
                 <img className="song-index-photo" src={song.photo} alt="song photo cover" />
-
                 <Link className="song-item-link" to={`/songs/${song.id}`}><h1>{song.song_name}</h1></Link>
             </li>            
             
