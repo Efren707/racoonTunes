@@ -19,8 +19,8 @@ class Playbar extends React.Component {
 
 
         return(
-            <div className="music-container" id="music-container">
-                <audio controls className="song-show-audio" src={song.audio} type="audio/mpeg" />
+            <div className="music-container">
+                <audio controls className="playbar-audio" src={song.audio} type="audio/mpeg" />
             </div>
         )
     }

@@ -1,0 +1,12 @@
+.music-container{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    justify-content: center;
+}
+
+.playbar-audio{
+    width: 80vw;
+}
