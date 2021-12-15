@@ -11,17 +11,19 @@ class UserShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.user;
+        this.state = ({user: this.props.user});
+        this.playSong = this.playSong.bind(this);
         this.editPage = this.editPage.bind(this);
     }
 
     componentDidMount(){
         this.props.receiveUser();
-        this.props.receiveAllSongs();
+        this.props.receiveAllSongs()
     }
 
-    componentDidUpdate(){
-        this.props.user;
+    playSong(e){
+        console.log(e, "targer")
+        // this.setState({currentSong: song})
     }
 
     editPage(){
@@ -42,6 +44,8 @@ class UserShow extends React.Component {
             }
         })
 
+        let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
+        
         return(
             
             <div className="user-show-page">
@@ -67,14 +71,16 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => <UserSongIndexItem song={song} user={user} index={index} key={song.id} />)
+                                userSongs.map((song, index) => {<UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />})
                             }
                         </ul>
 
                     </div>
 
-
+                    
                 </div>
+
+                {playbar}
                 
             </div>
         )
@@ -90,6 +96,7 @@ const mSTP = (state, ownProps) => {
         currentUserId: state.session.id,
         songs: Object.values(state.entities.songs)
     }   
+
 }
 
 const mDTP = dispatch => ({

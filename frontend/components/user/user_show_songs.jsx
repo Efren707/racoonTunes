@@ -6,14 +6,16 @@ class UserSongIndexItem extends React.Component {
 
     constructor(props){
         super(props);
+        this.state = {currentSong: this.props.song}
         this.playSong = this.playSong.bind(this);
+        this.playbar = false;
     }
 
     playSong(){
-        console.log('clicked')
+        this.setState({currentSong: this.props.song})
+        
     }
 
-    
     render() {
         const {song, user} = this.props;
 
@@ -34,8 +36,7 @@ class UserSongIndexItem extends React.Component {
 
                 
             </div>
-                       
-            
+                                   
         )
     }
 }

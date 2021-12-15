@@ -98,6 +98,9 @@ class DiscoverPage extends React.Component {
                         </ul>
 
                         <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
                     </div>
 
