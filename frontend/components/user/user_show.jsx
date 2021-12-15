@@ -71,7 +71,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => {<UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />})
+                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
