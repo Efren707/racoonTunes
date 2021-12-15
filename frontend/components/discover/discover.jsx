@@ -97,11 +97,11 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
 
+                        <br/>
+
                     </div>
 
                 </div>
-
-                <PlaybarContainer/>
 
             </div>
             

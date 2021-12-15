@@ -1,8 +1,19 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import PlaybarContainer from '../playbar/playbar';
 
 class UserSongIndexItem extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.playSong = this.playSong.bind(this);
+    }
+
+    playSong(){
+        console.log('clicked')
+    }
+
+    
     render() {
         const {song, user} = this.props;
 
@@ -10,17 +21,18 @@ class UserSongIndexItem extends React.Component {
 
             <div>
                 <li className="user-item">
-                    <Link to={`/songs/${song.id}`}><img className="user-song-index-photo" src={song.photo} alt="song photo cover" /></Link>
+                    <img className="user-song-index-photo" onClick={this.playSong} src={song.photo} alt="song photo cover" />
                     
                     <div className="user-song-item-name">
                         <div>
                             <h2>{user.username}</h2>
-                            <h1>{song.song_name}</h1>
+                            <Link to={`/songs/${song.id}`} className="user-song-title"><h1>{song.song_name}</h1></Link>
                         </div>
                         
-                        <audio controls className="song-show-audio" src={song.audio} type="audio/mpeg" />
                     </div>
                 </li> 
+
+                
             </div>
                        
             

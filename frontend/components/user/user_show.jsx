@@ -5,6 +5,7 @@ import { receiveOneUser } from '../../actions/user_actions';
 import { receiveAllSongs } from '../../actions/song_actions';
 import NavContainer from '../nav/nav';
 import UserSongIndexItem from './user_show_songs';
+import PlaybarContainer from '../playbar/playbar';
 
 class UserShow extends React.Component {
 
