@@ -20,7 +20,6 @@ class Playbar extends React.Component {
         
         const { songs } = this.props;
 
-        console.log(this.props)
         return(
             <div className="music-container">
                 <audio controls className="playbar-audio" src={this.props.song.audio} type="audio/mpeg" />

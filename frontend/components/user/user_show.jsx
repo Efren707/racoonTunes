@@ -17,12 +17,13 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
-        this.props.receiveUser();
-        this.props.receiveAllSongs()
+        
+        this.props.receiveAllSongs();
     }
 
-    playSong(e){
-        console.log(e, "targer")
+    playSong(){
+        
+        console.log("targer")
         // this.setState({currentSong: song})
     }
 
@@ -71,7 +72,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />)
+                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log('click')} song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
@@ -100,7 +101,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    receiveUser: userId => dispatch(receiveOneUser(userId)),
+    
     receiveAllSongs: () => dispatch(receiveAllSongs()),
 })
 
