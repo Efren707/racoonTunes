@@ -11,7 +11,7 @@ class UserShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = ({ user: this.props.user });
+        this.state = ({ user: this.props.user, currentSong: null });
         this.playSong = this.playSong.bind(this);
         this.editPage = this.editPage.bind(this);
     }
@@ -26,10 +26,10 @@ class UserShow extends React.Component {
         this.props.user;
     }
 
-    playSong(){
+    playSong(song){
         
-        console.log("target")
-        // this.setState({currentSong: song})
+        this.setState({currentSong: song})
+
     }
 
     editPage(){
@@ -50,7 +50,8 @@ class UserShow extends React.Component {
             }
         })
 
-        let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
+        // let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
+        let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
         
         return(
             
@@ -77,7 +78,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />)
+                                userSongs.map((song, index) => <UserSongIndexItem onClick={this.playSong} song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
