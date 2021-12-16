@@ -19,10 +19,10 @@ class EditUserForm extends React.Component {
     
     handleSubmit(e){
         const { history } = this.props;
-
+        
         e.preventDefault();
         this.props.updateCurrentUser(this.state)
-        .then(history.push(`/users/${this.props.currentUser}`))
+        .then(history.push(`/users/${this.props.user.id}`))
 
     }
 

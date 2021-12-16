@@ -11,7 +11,7 @@ class UserShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = ({user: this.props.user});
+        this.state = ({ user: this.props.user });
         this.playSong = this.playSong.bind(this);
         this.editPage = this.editPage.bind(this);
     }
@@ -19,6 +19,11 @@ class UserShow extends React.Component {
     componentDidMount(){
         
         this.props.receiveAllSongs();
+        this.props.receiveOneUser(this.props.currentUserId);
+    }
+
+    componentDidUpdate(){
+        this.props.user;
     }
 
     playSong(){
@@ -72,7 +77,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log('click')} song={song} user={user} index={index} key={song.id} />)
+                                userSongs.map((song, index) => <UserSongIndexItem style={{backgroundColor: "red"}} song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
@@ -103,6 +108,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
     
     receiveAllSongs: () => dispatch(receiveAllSongs()),
+    receiveOneUser: user => dispatch(receiveOneUser(user))
 })
 
 const UserShowContainer = connect(mSTP, mDTP)(UserShow);

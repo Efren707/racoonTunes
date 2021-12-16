@@ -18,8 +18,8 @@ export const receiveAllUsers = () => dispatch => {
     .then(users => dispatch(receiveUsers(users)))
 }
 
-export const receiveOneUser = () => dispatch => {
-    return UserApiUtil.receiveUser()
+export const receiveOneUser = userId => dispatch => {
+    return UserApiUtil.receiveUser(userId)
     .then(user => dispatch(receiveUser(user)))
 }
 
