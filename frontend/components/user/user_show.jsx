@@ -28,7 +28,7 @@ class UserShow extends React.Component {
 
     playSong(){
         
-        console.log("targer")
+        console.log("target")
         // this.setState({currentSong: song})
     }
 
@@ -77,7 +77,7 @@ class UserShow extends React.Component {
 
                         <ul>
                             {
-                                userSongs.map((song, index) => <UserSongIndexItem style={{backgroundColor: "red"}} song={song} user={user} index={index} key={song.id} />)
+                                userSongs.map((song, index) => <UserSongIndexItem onClick={console.log("click")} song={song} user={user} index={index} key={song.id} />)
                             }
                         </ul>
 
