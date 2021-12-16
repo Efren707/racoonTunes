@@ -17,7 +17,6 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
-        
         this.props.receiveAllSongs();
         this.props.receiveOneUser(this.props.currentUserId);
     }
