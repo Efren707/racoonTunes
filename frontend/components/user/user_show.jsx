@@ -26,9 +26,7 @@ class UserShow extends React.Component {
     }
 
     playSong(song){
-        
         this.setState({currentSong: song})
-
     }
 
     editPage(){

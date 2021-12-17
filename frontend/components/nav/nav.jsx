@@ -17,6 +17,7 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     </Link>
                     &nbsp;<h1>RacoonTunes</h1>
                 </div>
+            
                 <div className="nav-buttons">
 
                     <a className="upload-btn" href="https://github.com/Efren707">Github</a>

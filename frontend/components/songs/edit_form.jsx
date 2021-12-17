@@ -11,6 +11,8 @@ class EditSongForm extends React.Component {
         this.handleSongSubmit = this.handleSongSubmit.bind(this);
         this.handleAudio = this.handleAudio.bind(this);
         this.handlePhoto = this.handlePhoto.bind(this);
+        this.songUploaded = false;
+        this.picUploaded = false;
     }
 
     componentDidMount(){
@@ -34,8 +36,8 @@ class EditSongForm extends React.Component {
 
     handleSongSubmit(e) {
         const { history } = this.props;
-
-        e.preventDefault()
+       
+        
 
         const formData = new FormData();
         formData.append('song[id]', this.state.id);
