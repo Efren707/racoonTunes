@@ -85,8 +85,7 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     
                     <div className="login-form">
-                        <br />
-
+                        
                         {name}
                         {email}
 
