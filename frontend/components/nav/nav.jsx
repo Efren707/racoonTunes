@@ -20,13 +20,13 @@ const Nav = ({ currentUser, logout, openModal }) => {
             
                 <div className="nav-buttons">
 
-                    <a className="upload-btn" href="https://github.com/Efren707">Github</a>
+                    <a className="upload-btn" href="https://github.com/Efren707" target="_blank">Github</a>
                     &nbsp;&nbsp;
 
-                    <a className="upload-btn" href="https://www.linkedin.com/in/efren-bahena-419807172/">LinkedIn</a>
+                    <a className="upload-btn" href="https://www.linkedin.com/in/efren-bahena-419807172/" target="_blank">LinkedIn</a>
                     &nbsp;&nbsp;
 
-                    <a className="upload-btn" href="https://angel.co/u/efren-bahena">AngelList</a>
+                    <a className="upload-btn" href="https://angel.co/u/efren-bahena" target="_blank">AngelList</a>
                     &nbsp;&nbsp;
 
                     <Link className="upload-btn" to="/upload">Upload</Link>
