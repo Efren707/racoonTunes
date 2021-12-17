@@ -22,6 +22,33 @@
 
 ![image](https://user-images.githubusercontent.com/53492872/141493129-66d8089f-5d04-4f52-aad2-2f308f095887.png)
 
+```JavaScript
+ if(!this.props.songs) return [];
+        
+ const { songs } = this.props;
+
+ let randbSongs = [];
+ let rapSongs = [];
+ let rockSongs = [];
+ let popSongs = [];
+
+ songs.map((song) => {
+     switch (song.genre) {
+         case "Hip-Hop & Rap":
+             rapSongs.push(song);
+             break;
+         case "R&B & Soul":
+             randbSongs.push(song);
+             break;
+         case "Rock":
+             rockSongs.push(song);
+             break;
+         case "Pop":
+             popSongs.push(song);
+             break;
+     }
+ })
+```
 
 - When a song is successfully uploaded the user is redirected to the song show page
 
