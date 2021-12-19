@@ -36,11 +36,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 35vh;
+    height: 30vh;
     width: 55vw;
     border-bottom: 1px solid lightgrey;
-    overflow-x: scroll;
+    overflow-x: auto;    
 }
+
 
 .dicover-item {
     float: left;
@@ -48,8 +49,8 @@
 }
 
 .song-index-photo {
-    height: 12vw;
-    width: 12vw;
+    height: 10vw;
+    width: 10vw;
     border: 1px solid lightgrey;
 }
 

@@ -57,9 +57,9 @@ class DiscoverPage extends React.Component {
 
                         <div className="discover-chart">
 
-                            <ul>
+                            <ul className="discover-songs-ul">
                                 {
-                                    songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(Math.max(songs.length - 4, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
                         </div>
@@ -72,7 +72,7 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(0, 4).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
@@ -85,7 +85,7 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    rapSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    rapSongs.slice(0, 4).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
@@ -99,7 +99,7 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    rockSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    rockSongs.slice(0, 4).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
