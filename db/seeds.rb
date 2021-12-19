@@ -31,6 +31,10 @@ frank = User.create!({username: 'FrankOcean', password: '123456', name: 'Frank O
 frank_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
 frank.profile_pic.attach(io: frank_pic, filename: "frankProfile.png")
 
+mac = User.create!({username: 'MacMiller', password: '123456', name: 'Mac Miller', email: 'easymac@user.com'})
+mac_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
+mac.profile_pic.attach(io: mac_pic, filename: "frankProfile.png")
+
 song1 = Song.create!({song_name: 'Stargazing', genre: "Hip-Hop & Rap", description: "In the song, Travis Scott sings about how overcoming his past ways and abstinence from lean has helped him become a better influence", author_id: travis.id})
 song1_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/astroworld.jpg")
 song1.photo.attach(io: song1_pic, filename: "astroworld.jpg")
