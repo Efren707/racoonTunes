@@ -1,20 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { receiveAllSongs } from '../../actions/song_actions';
+import { receiveAllUsers } from '../../actions/user_actions';
 import SongIndexItem from '../songs/song_index_item';
+import UserIndexItem from '../user/user_index_item';
 import NavContainer from '../nav/nav';
 import PlaybarContainer from '../playbar/playbar';
 
 class DiscoverPage extends React.Component {
 
     componentDidMount(){
+        debugger
+        this.props.receiveAllUsers();
         this.props.receiveAllSongs();
     }
 
     render() {
         if(!this.props.songs) return [];
+        if(!this.props.users) return [];
         
-        const { songs } = this.props;
+        const { songs, users } = this.props;
         
         let randbSongs = [];
         let rapSongs = [];
@@ -37,15 +42,14 @@ class DiscoverPage extends React.Component {
                     break;
             }
         })
-
-        
-        
+                
         return(
             <div className="discover-page-background">
 
                 <NavContainer />
 
                 <div className="discover-page">
+                    
                     <br />
                     <h2>Charts: New & hot</h2>
 
@@ -106,6 +110,9 @@ class DiscoverPage extends React.Component {
 
                 </div>
 
+                
+                
+
             </div>
             
         )
@@ -114,10 +121,12 @@ class DiscoverPage extends React.Component {
 
 const mSTP = (state, ownProps) => ({
     songs: Object.values(state.entities.songs),
+    users: Object.values(state.entities.users),
 })
 
 const mDTP = dispatch => ({
-    receiveAllSongs: () => dispatch(receiveAllSongs())
+    receiveAllSongs: () => dispatch(receiveAllSongs()),
+    receiveAllUsers: () => dispatch(receiveAllUsers())
 })
 
 const DiscoverContainer = connect(mSTP, mDTP)(DiscoverPage);
