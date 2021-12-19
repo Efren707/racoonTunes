@@ -12,10 +12,9 @@ class UserIndexItem extends React.Component {
 
         return(
 
-            <li>
+            <li className="discover-users-li">
                 <Link to={`/users/${user.id}`}><img className="discover-user-pic" src={user.profile_pic} alt="user profile photo" /></Link>
-                <Link to={`/users/${user.id}`}><h1>{user.name}</h1></Link>
-                <Link to={`/users/${user.id}`}><h2>{user.username}</h2></Link>
+                <Link to={`/users/${user.id}`} className="discover-user-username"><h2>{user.username}</h2></Link>
             </li>            
             
         )

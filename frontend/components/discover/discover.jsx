@@ -18,7 +18,7 @@ class DiscoverPage extends React.Component {
         if(!this.props.songs) return [];
         if(!this.props.users) return [];
         
-        const { songs, users } = this.props;
+        const { songs, users, currentUser } = this.props;
         
         let randbSongs = [];
         let rapSongs = [];
@@ -42,6 +42,13 @@ class DiscoverPage extends React.Component {
             }
         })
 
+        let usersArr = [];
+
+        users.map((user) => {
+            if(user.id !== currentUser){
+                usersArr.push(user)
+            }
+        })
         
                 
         return(
@@ -111,8 +118,21 @@ class DiscoverPage extends React.Component {
                         </div>
                     </div>
 
-                    <div className="discover-users">
+                    
 
+                    <div className="discover-users">
+                        <br/>
+            
+                        <h2>Artist you should checkout</h2>
+                        <br/>
+                        <br/>
+                        
+
+                        <ul>
+                                {
+                                    usersArr.slice(0, 4).map((user, index) => <UserIndexItem user={user} index={index} key={user.id} />)
+                                }
+                        </ul>
                     </div>
                     
 
@@ -130,6 +150,7 @@ class DiscoverPage extends React.Component {
 const mSTP = (state, ownProps) => ({
     songs: Object.values(state.entities.songs),
     users: Object.values(state.entities.users),
+    currentUser: state.session.id,
 })
 
 const mDTP = dispatch => ({
