@@ -43,9 +43,9 @@ tyler = User.create!({username: 'Tyler', password: '123456', name: 'Tyler The Cr
 tyler_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
 tyler.profile_pic.attach(io: tyler_pic, filename: "frankProfile.png")
 
-weeknd = User.create!({username: 'TheWeeknd', password: '123456', name: 'The Weeknd', email: 'starboy@user.com'})
-weeknd_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
-weeknd.profile_pic.attach(io: weeknd_pic, filename: "frankProfile.png")
+kanye = User.create!({username: 'Kanye', password: '123456', name: 'Kanye West', email: 'collegedropout@user.com'})
+kanye_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
+kanye.profile_pic.attach(io: kanye_pic, filename: "frankProfile.png")
 
 song1 = Song.create!({song_name: 'Stargazing', genre: "Hip-Hop & Rap", description: "In the song, Travis Scott sings about how overcoming his past ways and abstinence from lean has helped him become a better influence", author_id: travis.id})
 song1_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/astroworld.jpg")
