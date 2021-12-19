@@ -13,7 +13,19 @@
     background-color: white;
     position: fixed;
     top: 3vw;
+    display: flex;
     
+}
+
+.discover-songs{
+    width: 55vw;
+    height: 100vh;
+}
+
+.discover-users{
+    width: 25vw;
+    height: 100%;
+    background-color: red;
 }
 
 .discover-page h2 {
@@ -25,14 +37,15 @@
     flex-direction: row;
     justify-content: space-around;
     height: 35vh;
-    width: 80vw;
+    width: 55vw;
     border-bottom: 1px solid lightgrey;
+    overflow-x: scroll;
+ 
 }
 
 .dicover-item {
     float: left;
     padding: 20px;
-    
 }
 
 .song-index-photo {

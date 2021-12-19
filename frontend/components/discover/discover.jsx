@@ -10,7 +10,6 @@ import PlaybarContainer from '../playbar/playbar';
 class DiscoverPage extends React.Component {
 
     componentDidMount(){
-        debugger
         this.props.receiveAllUsers();
         this.props.receiveAllSongs();
     }
@@ -42,6 +41,8 @@ class DiscoverPage extends React.Component {
                     break;
             }
         })
+
+        
                 
         return(
             <div className="discover-page-background">
@@ -50,63 +51,70 @@ class DiscoverPage extends React.Component {
 
                 <div className="discover-page">
                     
-                    <br />
-                    <h2>Charts: New & hot</h2>
+                    <div className="discover-songs">
+                        <br />
+                        <h2>Charts: New & hot</h2>
 
-                    <div className="discover-chart">
+                        <div className="discover-chart">
 
-                        <ul>
-                            {
-                                songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                            }
-                        </ul>
+                            <ul>
+                                {
+                                    songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
+                        </div>
+
+                        <br />
+
+                        <h2>Charts: Top 50</h2>
+
+                        <div className="discover-chart">
+
+                            <ul>
+                                {
+                                    songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
+
+                        </div>
+                        <br/>
+
+                        <h2>Rap Corner</h2>
+
+                        <div className="discover-chart">
+
+                            <ul>
+                                {
+                                    rapSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
+
+                        </div>
+                        
+                        <br />
+
+                        <h2>Rock & Metal</h2>
+
+                        <div className="discover-chart">
+
+                            <ul>
+                                {
+                                    rockSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                }
+                            </ul>
+
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                        </div>
                     </div>
 
-                    <br />
-
-                    <h2>Charts: Top 50</h2>
-
-                    <div className="discover-chart">
-
-                        <ul>
-                            {
-                                songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                            }
-                        </ul>
-
-                    </div>
-                     <br/>
-
-                    <h2>Rap Corner</h2>
-
-                    <div className="discover-chart">
-
-                        <ul>
-                            {
-                                rapSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                            }
-                        </ul>
+                    <div className="discover-users">
 
                     </div>
                     
-                    <br />
-
-                    <h2>Rock & Metal</h2>
-
-                    <div className="discover-chart">
-
-                        <ul>
-                            {
-                                rockSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
-                            }
-                        </ul>
-
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-
-                    </div>
 
                 </div>
 
