@@ -18,7 +18,7 @@ class UserShow extends React.Component {
 
     componentDidMount(){
         this.props.receiveAllSongs();
-        this.props.receiveOneUser(this.props.user.id);
+        this.props.receiveOneUser(this.props.currentUserId);
     }
 
     componentDidUpdate(){
@@ -107,7 +107,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    
     receiveAllSongs: () => dispatch(receiveAllSongs()),
     receiveOneUser: user => dispatch(receiveOneUser(user))
 })
