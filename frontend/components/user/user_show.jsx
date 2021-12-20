@@ -18,7 +18,7 @@ class UserShow extends React.Component {
 
     componentDidMount(){
         this.props.receiveAllSongs();
-        this.props.receiveOneUser(this.props.currentUserId);
+        this.props.receiveOneUser(this.props.user.id);
     }
 
     componentDidUpdate(){
@@ -98,7 +98,7 @@ class UserShow extends React.Component {
 const mSTP = (state, ownProps) => {
     
     return{
-        user: state.entities.users[state.session.id],
+        user: state.entities.users[ownProps.match.params.id],
         currentUser: state.session,
         currentUserId: state.session.id,
         songs: Object.values(state.entities.songs)
