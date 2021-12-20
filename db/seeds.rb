@@ -32,20 +32,20 @@ frank_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProf
 frank.profile_pic.attach(io: frank_pic, filename: "frankProfile.png")
 
 mac = User.create!({username: 'MacMiller', password: '123456', name: 'Mac Miller', email: 'easymac@user.com'})
-mac_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
-mac.profile_pic.attach(io: mac_pic, filename: "frankProfile.png")
+mac_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/macProfile.jpg")
+mac.profile_pic.attach(io: mac_pic, filename: "macProfile.jpg")
 
 weeknd = User.create!({username: 'TheWeeknd', password: '123456', name: 'The Weeknd', email: 'starboy@user.com'})
-weeknd_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
-weeknd.profile_pic.attach(io: weeknd_pic, filename: "frankProfile.png")
+weeknd_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/weekndProfile.jpg")
+weeknd.profile_pic.attach(io: weeknd_pic, filename: "weekndProfile.jpg")
 
 tyler = User.create!({username: 'Tyler', password: '123456', name: 'Tyler The Creator', email: 'ofwgkta@user.com'})
-tyler_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
-tyler.profile_pic.attach(io: tyler_pic, filename: "frankProfile.png")
+tyler_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/tylerProfile.jfif")
+tyler.profile_pic.attach(io: tyler_pic, filename: "tylerProfile.jfif")
 
 kanye = User.create!({username: 'Kanye', password: '123456', name: 'Kanye West', email: 'collegedropout@user.com'})
-kanye_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/frankProfile.png")
-kanye.profile_pic.attach(io: kanye_pic, filename: "frankProfile.png")
+kanye_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/kanyeProfile.jpg")
+kanye.profile_pic.attach(io: kanye_pic, filename: "kanyeProfile.jpg")
 
 song1 = Song.create!({song_name: 'Stargazing', genre: "Hip-Hop & Rap", description: "In the song, Travis Scott sings about how overcoming his past ways and abstinence from lean has helped him become a better influence", author_id: travis.id})
 song1_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/astroworld.jpg")
