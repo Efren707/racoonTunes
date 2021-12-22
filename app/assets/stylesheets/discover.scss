@@ -18,8 +18,9 @@
 }
 
 .discover-songs{
-    width: 60vw;
+    width: 80vw;
     height: 100vh;
+    
 }
 
 .discover-users{
@@ -39,11 +40,21 @@
     flex-direction: row;
     justify-content: space-around;
     height: 30vh;
-    width: 55vw;
+    width: 62vw;
     border-bottom: 1px solid lightgrey;
     overflow-x: auto;    
 }
 
+.discover-chart-last{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30vh;
+    width: 62vw;
+    border-bottom: 1px solid lightgrey;
+    overflow-x: auto; 
+    padding-bottom: 20px;   
+}
 
 .dicover-item {
     float: left;
@@ -51,8 +62,8 @@
 }
 
 .song-index-photo {
-    height: 10vw;
-    width: 10vw;
+    height: 9vw;
+    width: 9vw;
     border: 1px solid lightgrey;
 }
 
