@@ -18,7 +18,7 @@ class UserShow extends React.Component {
 
     componentDidMount(){
         this.props.receiveAllSongs();
-        this.props.receiveOneUser(this.props.currentUserId);
+        
     }
 
     componentDidUpdate(){
@@ -49,6 +49,10 @@ class UserShow extends React.Component {
 
         // let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
         let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
+        
+        
+
+
         
         return(
             
@@ -108,7 +112,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     receiveAllSongs: () => dispatch(receiveAllSongs()),
-    receiveOneUser: user => dispatch(receiveOneUser(user))
 })
 
 const UserShowContainer = connect(mSTP, mDTP)(UserShow);
