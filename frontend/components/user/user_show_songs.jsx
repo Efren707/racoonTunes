@@ -1,22 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import PlaybarContainer from '../playbar/playbar';
 
 class UserSongIndexItem extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {currentSong: this.props.song}
-        // this.playSong = this.playSong.bind(this);
         this.playbar = false;
     }
-
-    // playSong(){
-
-    //     console.log("click here")
-    //     this.setState({currentSong: this.props.song})
-        
-    // }
 
     render() {
         const {song, user} = this.props;
