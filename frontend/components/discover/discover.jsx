@@ -9,9 +9,19 @@ import PlaybarContainer from '../playbar/playbar';
 
 class DiscoverPage extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = ({ currentSong: null });
+        this.playSong = this.playSong.bind(this);
+    }
+
     componentDidMount(){
         this.props.receiveAllUsers();
         this.props.receiveAllSongs();
+    }
+
+    playSong(song){
+        this.setState({currentSong: song})
     }
 
     render() {
@@ -49,7 +59,9 @@ class DiscoverPage extends React.Component {
                 usersArr.push(user)
             }
         })
-        
+
+        let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
+
                 
         return(
             <div className="discover-page-background">
@@ -66,7 +78,7 @@ class DiscoverPage extends React.Component {
 
                             <ul className="discover-songs-ul">
                                 {
-                                    songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(Math.max(songs.length - 5, 0)).map((song, index) => <SongIndexItem onClick={this.playSong} song={song} index={index} key={song.id} />)
                                 }
                             </ul>
                         </div>
@@ -79,7 +91,7 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    songs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    songs.slice(0, 5).map((song, index) => <SongIndexItem onClick={this.playSong} song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
@@ -92,7 +104,7 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    rapSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    rapSongs.slice(0, 5).map((song, index) => <SongIndexItem onClick={this.playSong} song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
@@ -106,11 +118,14 @@ class DiscoverPage extends React.Component {
 
                             <ul>
                                 {
-                                    rockSongs.slice(0, 5).map((song, index) => <SongIndexItem song={song} index={index} key={song.id} />)
+                                    rockSongs.slice(0, 5).map((song, index) => <SongIndexItem onClick={this.playSong} song={song} index={index} key={song.id} />)
                                 }
                             </ul>
 
                         </div>
+
+                        {playbar}
+                        
                     </div>
 
                     

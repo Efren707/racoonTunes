@@ -6,11 +6,8 @@ class SongIndexItem extends React.Component {
 
     constructor(props){
         super(props);
-        this.handleSongClick = this.handleSongClick.bind(this);
-    }
-
-    handleSongClick(){
-        <PlaybarContainer playSong={this.props.song} />
+        this.state = {currentSong: this.props.song}
+        this.playbar = false;
     }
 
     render() {
@@ -19,7 +16,7 @@ class SongIndexItem extends React.Component {
         return(
 
             <li className="dicover-item">
-                <Link to={`/songs/${song.id}`}><img onClick={this.handleSongClick} className="song-index-photo" src={song.photo} alt="song photo cover" /></Link>
+                <img onClick={() => this.props.onClick(song)} className="song-index-photo" src={song.photo} alt="song photo cover" />
                 <Link className="song-item-link" to={`/songs/${song.id}`}><h1>{song.song_name}</h1></Link>
             </li>            
             
