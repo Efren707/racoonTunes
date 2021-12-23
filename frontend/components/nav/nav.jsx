@@ -15,7 +15,11 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     <Link to='/'>
                         <img className="logo" src={window.logo} />
                     </Link>
-                    &nbsp;<h1>RacoonTunes</h1>
+                    &nbsp;<Link to='/'><h1 className="nav-logo-link">RacoonTunes</h1></Link>
+                </div>
+
+                <div>
+                    <input type="text" className="nav-search-bar" placeholder="Coming soon...                                                                                               &#x1F50E;&#xFE0E;"></input>
                 </div>
             
                 <div className="nav-buttons">
