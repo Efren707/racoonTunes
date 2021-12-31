@@ -11,19 +11,15 @@ class UserShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = ({ user: this.props.user, currentSong: null });
+        this.state = ({ currentSong: null });
         this.playSong = this.playSong.bind(this);
         this.editPage = this.editPage.bind(this);
     }
 
     componentDidMount(){
-        this.props.receiveAllSongs();
-        
+        this.props.receiveAllSongs();   
     }
 
-    componentDidUpdate(){
-        this.props.user;
-    }
 
     playSong(song){
         this.setState({currentSong: song})
@@ -32,28 +28,25 @@ class UserShow extends React.Component {
     editPage(){
         this.props.history.push(`/users/edit/${this.props.currentUserId}`)
     }
+
     
     render(){
         if(!this.props.user) return null;
         if(!this.props.songs) return [];
 
-        const { user, songs } = this.props;
+        const { user, songs, currentUserId } = this.props;
         
         let userSongs = [];
 
         songs.map((song) => {
-            if(song.author_id === this.props.currentUserId) {
+            if(song.author_id === user.id) {
                 userSongs.push(song)
             }
         })
 
         // let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
         let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
-        
-        
-
-
-        
+           
         return(
             
             <div className="user-show-page">
@@ -88,9 +81,7 @@ class UserShow extends React.Component {
                     
                 </div>
                 
-                <div className="show-page-playbar">
-
-                </div>
+    
                 {playbar}
                 
             </div>
@@ -103,7 +94,6 @@ const mSTP = (state, ownProps) => {
     
     return{
         user: state.entities.users[ownProps.match.params.id],
-        currentUser: state.session,
         currentUserId: state.session.id,
         songs: Object.values(state.entities.songs)
     }   

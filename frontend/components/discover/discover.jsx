@@ -61,7 +61,6 @@ class DiscoverPage extends React.Component {
         })
 
         let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
-
                 
         return(
             <div className="discover-page-background">
