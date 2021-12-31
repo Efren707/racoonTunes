@@ -46,7 +46,9 @@ class UserShow extends React.Component {
 
         // let playbar = userSongs[0] ? (<PlaybarContainer song={userSongs[0]}/>) : null; 
         let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
-           
+
+        let edit = user.id === currentUserId ? (<button className="user-edit-btn" onClick={this.editPage}>Edit Profile</button>) : null;
+
         return(
             
             <div className="user-show-page">
@@ -64,7 +66,7 @@ class UserShow extends React.Component {
                             <h2>{user.username}</h2>
                         </div>
 
-                        <button className="user-edit-btn" onClick={this.editPage}>Edit Profile</button>
+                        {edit}
 
                     </div>
 
@@ -80,6 +82,7 @@ class UserShow extends React.Component {
 
                     
                 </div>
+                
                 
     
                 {playbar}
