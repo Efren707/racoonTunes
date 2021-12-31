@@ -30,10 +30,6 @@
     padding-left: 15px;
 }
 
-.discover-page h2 {
-    padding-left: 10px;
-}
-
 .discover-chart {
     display: flex;
     flex-direction: row;
@@ -77,8 +73,8 @@
 }
 
 .discover-user-pic{
-    height: 3vw;
-    width: 3vw;
+    height: 3.5vw;
+    width: 3.5vw;
     border-radius: 50%;
 }
 
@@ -91,4 +87,15 @@
 .discover-user-username{
     text-decoration: none;
     color: black;
+}
+
+.discover-page h2 {
+    padding-left: 10px;
+}
+
+.discover-page h3 {
+    padding-top: 3px;
+    padding-left: 12px;
+    color: lightgray;
+    font-size: 10px;
 }
