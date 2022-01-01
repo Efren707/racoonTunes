@@ -9,7 +9,7 @@ class UserIndexItem extends React.Component {
 
     render() {
         const {user} = this.props;
-
+        
         return(
 
             <li className="discover-users-li">

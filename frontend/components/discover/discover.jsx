@@ -84,7 +84,7 @@ class DiscoverPage extends React.Component {
 
                         <br />
 
-                        <h2>Charts: Top 50</h2>
+                        <h2>Charts: Top 5</h2>
 
                         <div className="discover-chart">
 
