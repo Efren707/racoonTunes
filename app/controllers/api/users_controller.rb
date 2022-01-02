@@ -1,6 +1,15 @@
+require "open-uri"
+
 class Api::UsersController < ApplicationController
+  
+  ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
   def create
     @user = User.new(user_params)
+
+    user_pic = open("https://racoontunes-seeds.s3.us-west-1.amazonaws.com/emptyuser.png")
+    @user.profile_pic.attach(io: user_pic, filename: "emptyuser.png")
+
     if @user.save
       login(@user)
  
