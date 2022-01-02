@@ -3,8 +3,6 @@ export const signup = user => (
         method: 'POST',
         url: '/api/users',
         data: { user },
-        contentType: false,
-        processData: false
     })
 );
 
