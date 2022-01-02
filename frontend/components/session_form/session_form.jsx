@@ -10,9 +10,11 @@ class SessionForm extends React.Component {
             password: "",
             email: "",
             name: "",
+            photoFile: null,
             errors: {}
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePhoto = this.handlePhoto.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
@@ -26,6 +28,10 @@ class SessionForm extends React.Component {
         });
     }
 
+    handlePhoto(e){
+        this.setState({photoFile: e.currentTarget.files[0]})
+    }
+
     handleDemoSubmit(e) {
         e.preventDefault();
         this.props.login({
@@ -37,7 +43,16 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
 
         e.preventDefault();
-        const user = Object.assign({}, this.state); 
+
+        const formData = new FormData();
+        
+        formData.append('user[username]', this.state.username);
+        formData.append('user[email]', this.state.email);
+        formData.append('user[password]', this.state.password);
+        formData.append('user[name]', this.props.name);
+        formData.append('user[profile_pic]', this.state.photoFile);
+        
+        const user = Object.assign({}, formData); 
 
         this.props.processForm(user).then(response => {
             if(response.errors){
@@ -65,9 +80,11 @@ class SessionForm extends React.Component {
 
         let email;
         let name;
+        let picture;
         let demo;
         
         if(this.props.formType === 'signup'){
+            picture = <div><label><span>Profile Picture:</span>&nbsp;<input type="file" onChange={this.handlePhoto} /></label><br/></div>
             email = <div><label><span>Email:</span>&nbsp;<input type="text" value={this.state.email} onChange={this.update('email')} /></label><br/></div>
             name = <div><label><span>Name:</span>&nbsp;<input type="text" value={this.state.name} onChange={this.update('name')} /></label><br/></div>
         }
@@ -85,7 +102,7 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     
                     <div className="login-form">
-                        
+                        {picture}
                         {name}
                         {email}
 

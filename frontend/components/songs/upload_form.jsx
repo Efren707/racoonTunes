@@ -43,7 +43,7 @@ class UploadSongForm extends React.Component {
     handleSongSubmit(e){
         const {history} = this.props;
         
-        e.preventDefault()
+        e.preventDefault();
         const formData = new FormData();
         formData.append('song[song_name]', this.state.song_name);
         formData.append('song[genre]', this.state.genre);
