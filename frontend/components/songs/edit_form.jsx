@@ -36,9 +36,7 @@ class EditSongForm extends React.Component {
 
     handleSongSubmit(e) {
         const { history } = this.props;
-       
-        
-
+     
         const formData = new FormData();
         formData.append('song[id]', this.state.id);
         formData.append('song[song_name]', this.state.song_name);
