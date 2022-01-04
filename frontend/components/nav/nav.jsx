@@ -19,7 +19,7 @@ const Nav = ({ currentUser, logout, openModal }) => {
                 </div>
 
                 <div>
-                    <input type="text" className="nav-search-bar" placeholder="Coming soon...                                                                                               &#x1F50E;&#xFE0E;"></input>
+                    <input type="text" className="nav-search-bar" placeholder="Coming soon..."></input>
                 </div>
             
                 <div className="nav-buttons">

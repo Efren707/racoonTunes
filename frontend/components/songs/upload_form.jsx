@@ -65,7 +65,7 @@ class UploadSongForm extends React.Component {
                 <div className="upload-form">
                     <form>
                         
-                        <div>
+                        <div className="upload-form-heading">
                             <h1>Create your own song </h1>
                             <p>* Required fields</p>
                         </div>
