@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
+import SearchBarContainer from './searchbar';
 
 const Nav = ({ currentUser, logout, openModal }) => {
 
@@ -18,9 +19,9 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     &nbsp;<Link to='/'><h1 className="nav-logo-link">RacoonTunes</h1></Link>
                 </div>
 
-                <div>
-                    <input type="text" className="nav-search-bar" placeholder="Coming soon..."></input>
-                </div>
+                
+                <SearchBarContainer/>
+            
             
                 <div className="nav-buttons">
 
