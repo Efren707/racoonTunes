@@ -1,7 +1,27 @@
 .filtered-songs{
-    background-color: black;
     position: fixed;
-    top: 5.1vh;
+    top: 6.2vh;
     z-index: 26;
     width: 30.4vw;
+    color: rgb(177, 177, 177);
+}
+
+.search-title{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+    background-color: #333;
+}
+
+.search-result{
+    display: flex;
+    align-items: center;
+    background-color: rgb(19, 19, 19);
+    height: 5vh;
+    width: 30.4vw;
+}
+
+.search-result-title{
+    font-size: 14px;
+    font-weight: 400;
 }

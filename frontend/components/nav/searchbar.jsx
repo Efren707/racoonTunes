@@ -35,15 +35,16 @@ class SearchBar extends React.Component {
             })
         }
 
-        console.log(searched)
+        let searchedSort = searched.sort((a, b) => (a.song_name > b.song_name) ? 1 : -1);
 
         return (
-            <div>
+            <div >
                 <input type="text" className="nav-search-bar" onChange={this.update('songSearch')} placeholder="Search"></input>
-                <div className='filtered-songs'>
+                <div className='filtered-songs' style={{display: this.state.songSearch.length > 0 ? "block" : "none"}}>
+                    <h3 className="search-title">Search for "{this.state.songSearch}"</h3>
                     <ul>
                         {
-                            searched.map((song, idx) => <SongDropDown song={song} key={idx}/>)
+                            searchedSort.slice(0,8).map((song, idx) => <SongDropDown song={song} key={idx}/>)
                         }
                     </ul>
                 </div>
