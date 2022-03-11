@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
 
         if(this.state.songSearch.length > 0){
             this.props.songs.forEach(song => {
-                if((song.song_name.toUpperCase() === this.state.songSearch.toUpperCase()) || (song.song_name.toUpperCase().includes(this.state.songSearch.toUpperCase()))){
+                if((song.song_name.slice(0,this.state.songSearch.length).toUpperCase() === this.state.songSearch.toUpperCase())){
                     searched.push(song)
                 }
             })
