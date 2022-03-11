@@ -2,8 +2,8 @@
     position: fixed;
     top: 6.2vh;
     z-index: 26;
-    width: 30.4vw;
-    color: rgb(177, 177, 177);
+    width: 30.5vw;
+    
 }
 
 .search-title{
@@ -11,6 +11,7 @@
     font-weight: 600;
     padding: 8px;
     background-color: #333;
+    color: rgb(177, 177, 177);
 }
 
 .search-result{
@@ -18,10 +19,19 @@
     align-items: center;
     background-color: rgb(19, 19, 19);
     height: 5vh;
-    width: 30.4vw;
+    width: 30.5vw;
+}
+
+.search-result:hover{
+    background-color: #333;
 }
 
 .search-result-title{
     font-size: 14px;
     font-weight: 400;
+}
+
+.search-result-link{
+    text-decoration: none;
+    color: rgb(177, 177, 177);
 }

@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
             })
         }
 
-        let searchedSort = searched.sort((a, b) => (a.song_name > b.song_name) ? 1 : -1);
+        let searchedSort = searched.sort((a, b) => (a.song_name.toUpperCase() > b.song_name.toUpperCase()) ? 1 : -1);
 
         return (
             <div >
