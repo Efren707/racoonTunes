@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { receiveAllSongs } from '../../actions/song_actions';
+import SongDropDown from './songDropDown';
 
 class SearchBar extends React.Component {
 
@@ -39,6 +40,13 @@ class SearchBar extends React.Component {
         return (
             <div>
                 <input type="text" className="nav-search-bar" onChange={this.update('songSearch')} placeholder="Search"></input>
+                <div className='filtered-songs'>
+                    <ul>
+                        {
+                            searched.map((song, idx) => <SongDropDown song={song} key={idx}/>)
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }
