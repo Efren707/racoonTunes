@@ -13,13 +13,16 @@ class Playbar extends React.Component {
 
         if(!this.props.songs) return [];
         
-        const { songs } = this.props;
+        
         
         return(
             <div className="music-container">
                 <audio controls className="playbar-audio" src={this.props.song.audio} type="audio/mpeg" />
                 <img className="playbar-photo" src={this.props.song.photo}/>
-                <h4 className="playbar-title">{this.props.song.song_name}</h4>
+                <div>
+                    <h4 className="playbar-title">{this.props.song.song_name}</h4>
+                    <h4 className="playbar-title">{this.props.user.name}</h4>
+                </div>
             </div>
         )
     }
