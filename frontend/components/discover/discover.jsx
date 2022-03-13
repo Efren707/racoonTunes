@@ -53,14 +53,21 @@ class DiscoverPage extends React.Component {
         })
 
         let usersArr = [];
+        let songArtist = {};
 
         users.map((user) => {
             if(user.id !== currentUser){
                 usersArr.push(user)
             }
+
+            if(this.state.currentSong != null){
+                if(user.id === this.state.currentSong.author_id){
+                    songArtist = user;
+                }
+            }
         })
 
-        let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong}/>) : null; 
+        let playbar = this.state.currentSong ? (<PlaybarContainer song={this.state.currentSong} user={songArtist} />) : null; 
                 
         return(
             <div className="discover-page-background">

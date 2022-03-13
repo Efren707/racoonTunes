@@ -9,11 +9,6 @@ class Playbar extends React.Component {
         this.state = this.props.song;
     }
 
-    // componentDidUpdate(){
-    //     this.props.receiveSong(this.props.song.id);
-    //     console.log("here")
-    // }
-
     render(){
 
         if(!this.props.songs) return [];
@@ -24,7 +19,7 @@ class Playbar extends React.Component {
             <div className="music-container">
                 <audio controls className="playbar-audio" src={this.props.song.audio} type="audio/mpeg" />
                 <img className="playbar-photo" src={this.props.song.photo}/>
-                <h4>{this.props.song.song_name}</h4>
+                <h4 className="playbar-title">{this.props.song.song_name}</h4>
             </div>
         )
     }
