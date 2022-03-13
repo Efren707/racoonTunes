@@ -38,8 +38,9 @@ class SearchBar extends React.Component {
         let searchedSort = searched.sort((a, b) => (a.song_name.toUpperCase() > b.song_name.toUpperCase()) ? 1 : -1);
 
         return (
-            <div >
+            <div className='search-bar-container'>
                 <input type="text" className="nav-search-bar" onChange={this.update('songSearch')} placeholder="Search"></input>
+                
                 <div className='filtered-songs' style={{display: this.state.songSearch.length > 0 ? "block" : "none"}}>
                     <h3 className="search-title">Search for "{this.state.songSearch}"</h3>
                     <ul>

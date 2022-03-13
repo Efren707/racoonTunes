@@ -16,7 +16,9 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     <Link to='/'>
                         <img className="logo" src={window.logo} />
                     </Link>
-                    &nbsp;<Link to='/'><h1 className="nav-logo-link">RacoonTunes</h1></Link>
+                    <Link className="nav-home-link" to='/'><h1 className="upload-btn">Home</h1></Link>
+                    <h1 className="upload-btn">Stream</h1>
+                    <h1 className="upload-btn">Library</h1>
                 </div>
 
                 
@@ -25,21 +27,18 @@ const Nav = ({ currentUser, logout, openModal }) => {
             
                 <div className="nav-buttons">
 
-                    <a className="upload-btn" href="https://github.com/Efren707" target="_blank">Github</a>
-                    &nbsp;&nbsp;
-
-                    <a className="upload-btn" href="https://www.linkedin.com/in/efren-bahena-419807172/" target="_blank">LinkedIn</a>
-                    &nbsp;&nbsp;
-
-                    <a className="upload-btn" href="https://angel.co/u/efren-bahena" target="_blank">AngelList</a>
-                    &nbsp;&nbsp;
-
                     <Link className="upload-btn" to="/upload">Upload</Link>
-                    &nbsp;&nbsp;
+                    
 
                     <Link className ="upload-btn" to={`/users/${currentUser.id}`}>Profile</Link>
-                    &nbsp;&nbsp;
                     
+                    <Link style={{textDecoration: "none"}} to={`/users/${currentUser.id}`}>
+                    <div className='nav-user-profile'>
+                        <img className="nav-user-pic" src={currentUser.profile_pic} />&nbsp;
+                        <h1 className="upload-btn">{currentUser.name}</h1>
+                    </div>
+                    </Link>
+
                     <button className="header-button" onClick={logout}>Log Out</button>
                 </div>
             </div>

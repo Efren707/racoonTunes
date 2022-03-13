@@ -13,8 +13,26 @@
     align-items: center;
 }
 
+.splash-logo-title{
+    width: 23vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-buttons{
+    width: 23vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .upload-btn {
     color: #ccc;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.nav-home-link{
     text-decoration: none;
 }
 
@@ -30,4 +48,21 @@
 .nav-search-bar{
     height: 1.5vw;
     width: 30vw;
+    border-radius: 4px;  
+    background-color: rgb(230, 230, 230); 
+}
+
+.nav-search-bar:focus{
+    outline: none;
+}
+
+.nav-user-profile{
+    display: flex;
+    align-items: center;
+}
+
+.nav-user-pic{
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
 }
