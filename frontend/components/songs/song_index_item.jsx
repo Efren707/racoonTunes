@@ -1,13 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import PlaybarContainer from "../playbar/playbar"
 
 class SongIndexItem extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {currentSong: this.props.song}
-        this.playbar = false;
     }
 
     render() {

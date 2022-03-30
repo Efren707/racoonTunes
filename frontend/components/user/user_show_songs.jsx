@@ -16,7 +16,7 @@ class UserSongIndexItem extends React.Component {
 
             <div>
                 <li className="user-item">
-                    <img className="user-song-index-photo" onClick={() => this.props.onClick(song)} src={song.photo} alt="song photo cover" />
+                    <img className="user-song-index-photo" onClick={() => this.props.onClick(this.state.currentSong)} src={song.photo} alt="song photo cover" />
                     
                     <div className="user-song-item-name">
                         <div>
