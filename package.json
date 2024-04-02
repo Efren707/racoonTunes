@@ -1,5 +1,5 @@
 {
-  "name": "racoonTunes",
+  "name": "racoontunes",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "webpack.config.js",
@@ -43,5 +43,5 @@
   "bugs": {
     "url": "https://github.com/Efren707/racoonTunes/issues"
   },
-  "homepage": "https://github.com/Efren707/racoonTunes#readme"
+  "homepage": ""
 }
